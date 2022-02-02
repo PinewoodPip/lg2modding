@@ -1,0 +1,18 @@
+site_name: Lazy Galaxy 2 Modding Docs
+site_url: https://pinewood.team/lg2modding/
+theme: readthedocs
+
+nav:
+  - Home: index.md
+  - Campaigns: campaigns.md
+  - Boosts: boosts.md
+  - Upgrades: upgrades.md
+  - Ships: ships.md
+  - Abilities: abilities.md
+  - Ascension: ascension.md
+  - Food: food.md
+  - Recipes: recipes.md
+  - Testing: testing.md
+  - Sprites: sprites.md
+  - Text: "custom-text.md"
+  - Enums: enums.md
