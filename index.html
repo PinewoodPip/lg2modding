@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  <link rel="canonical" href="https://pinewood.team/lg2modding/">
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Lazy Galaxy 2 Modding Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Home";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/lg2modding/";
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> Lazy Galaxy 2 Modding Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#file-format">File format</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#folder-structure">Folder structure</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="campaigns/">Campaigns</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="boosts/">Boosts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="upgrades/">Upgrades</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="ships/">Ships</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="abilities/">Abilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="ascension/">Ascension</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="food/">Food</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="recipes/">Recipes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="testing/">Testing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="sprites/">Sprites</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="custom-text/">Text</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="enums/">Enums</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">Lazy Galaxy 2 Modding Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="lazy-galaxy-2-modding-docs">Lazy Galaxy 2 Modding Docs</h1>
+<h2 id="introduction">Introduction</h2>
+<p>This site serves as a guide and reference to creating custom content for Lazy Galaxy 2.</p>
+<p>At the time of writing, mods can add new campaigns, upgrades, ships, ship abilities, food items, recipes and Ascension trees.</p>
+<p>You can load multiple mods at once, however enabling a mod on a savefile is a one-way trip; once enabled, the savefile will not load without the mod being installed. You will be notified of this when you try to load a savefile with new mods enabled, and a backup of the save will be created in case you need to revert.</p>
+<p>When creating mods, you should use separate saves for testing (or a copy of your normal one) in case things go wrong.</p>
+<h2 id="setup">Setup</h2>
+<p>The easiest way to create a mod is through the campaign editor option in the main menu:</p>
+<p><img alt="Campaign editor button" src="img/setup/campaign_editor_button.png" /></p>
+<p>Even if you don't intend to create a custom campaign, the menu is useful as it will create a mod project folder with all the metadata already written, so you do not need to set it all up manually.</p>
+<p>Make sure to make the ID field as unique as possible (including your name as a prefix/suffix helps a lot) to avoid conflicts with other mods as this will be used to identify your mod's stuff in savefiles. <strong>As such, it should not be changed, ever.</strong></p>
+<p><img alt="Campaign editor button" src="img/setup/mod_creation_menu.png" /></p>
+<p>Once you press create, a folder will be created in your savefile folder (<code>\AppData\LocalLow\ColdwildGames\Lazy Galaxy 2\Mods\</code> on Windows) and you'll be ready to start creating content. If you chose to create a campaign, you will be brought into the campaign editor.</p>
+<h2 id="file-format">File format</h2>
+<p><a href="campaigns/">Campaigns</a> are binary files, editable through the in-game campaign editor. All other custom content is defined through <code>.json</code> files, the properties and structure of each being explained in the various sections of these docs.</p>
+<p>JSON is a simple, easy to write and easy to read format inspired by JavaScript objects. You can quickly read up on its syntax <a href="https://www.tutorialspoint.com/json/json_syntax.htm">here</a>.</p>
+<p>All modded content must have a string ID, used to refer to the content in savefiles and other assets of your mod. These IDs should be unique across all content in your mod, and internally are automatically prefixed with your mod's ID to avoid conflicts, meaning it is redundant for you to prefix/suffix them yourself.</p>
+<p><strong>It is never safe (for existing savefiles) to remove content from a mod, or change IDs of things.</strong> If you wish to remove something, you should hide/make it unavailable instead, otherwise you risk making current saves that use your mod unusable. The sections for each type of modded item mention how to do so (if possible). Changing any other property is fine unless otherwise specified.</p>
+<p>Unless otherwise specified, properties in the <code>.json</code> files default to <code>0</code>/<code>false</code>/<code>""</code> (empty string) depending on the type.</p>
+<h2 id="folder-structure">Folder structure</h2>
+<p>A mod contains the following folders and files:</p>
+<ul>
+<li><code>meta.json</code>: contains mod metadata, like the mod's name, your author name, and version (used for parsing old mods in case of format changes in future game updates)</li>
+<li><code>Abilities</code>: contains files defining ship abilities.</li>
+<li><code>Campaigns</code>: contains campaign files; these are binary, they can only be edited in-game. Can also contain an Ascension tree for each campaign.</li>
+<li><code>Food</code>: contains food items.</li>
+<li><code>Language</code>: contains <code>.xml</code> files with custom text strings for use in other files (ex. ship and upgrade names/descriptions)</li>
+<li><code>Recipes</code>: contains cooking recipes.</li>
+<li><code>Ships</code>: contains ships.</li>
+<li><code>Sprites</code>: contains sprites, as <code>.png</code>s.</li>
+<li><code>Upgrades</code>: contains upgrades.</li>
+<li><code>Boosts</code>: contains boosts, which define the effects of upgrades and food items.</li>
+</ul>
+<p>You needn't to include assets of all types, however some require the use of others. Ships require Abilities, while Food and Upgrades require Boosts.</p>
+<p>Head over to one of the sections on the sidebar to get started! It's recommended to take a look at the (TODO: insert link) example mod as reference.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="campaigns/" class="btn btn-neutral float-right" title="Campaigns">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+      <span><a href="campaigns/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.2.3
+Build Date UTC : 2022-02-02 10:58:34.328159+00:00
+-->

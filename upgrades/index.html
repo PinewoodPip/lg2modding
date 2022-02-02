@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://pinewood.team/lg2modding/upgrades/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Upgrades - Lazy Galaxy 2 Modding Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Upgrades";
+    var mkdocs_page_input_path = "upgrades.md";
+    var mkdocs_page_url = "/lg2modding/upgrades/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Lazy Galaxy 2 Modding Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../campaigns/">Campaigns</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../boosts/">Boosts</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Upgrades</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#example">Example</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#properties">Properties</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ships/">Ships</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../abilities/">Abilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ascension/">Ascension</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../food/">Food</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../recipes/">Recipes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sprites/">Sprites</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../custom-text/">Text</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../enums/">Enums</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Lazy Galaxy 2 Modding Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Upgrades</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="upgrades">Upgrades</h1>
+<p>Upgrades are defined in the <code>Upgrades</code> folder. An upgrade only defines the name, price, tiering and other metadata; the actual effects that it grants to the player are defined through a <a href="../boosts/">boost</a>.</p>
+<h2 id="example">Example</h2>
+<p>This example is a tier 2 upgrade that costs 2k Experience and 15k Fuel.</p>
+<pre><code class="language-json">{
+    &quot;referenceName&quot;:&quot;Panel upgrade 2&quot;,
+    &quot;mutualExclusivityGroup&quot;: &quot;&quot;,
+    &quot;boostId&quot;: &quot;test_upgrade_boost&quot;,
+    &quot;stringId&quot;:&quot;test_upgrade&quot;,
+    &quot;name&quot;: &quot;upgrade.test_upgrade_1&quot;,
+    &quot;isAscensionUpgrade&quot;: false,
+    &quot;important&quot;: true,
+    &quot;sprite&quot;: &quot;test_sprite.png&quot;,
+    &quot;tier&quot;: 2,
+    &quot;costsInspector&quot;: [
+        {
+            &quot;resource&quot;: [4, 1],
+            &quot;value&quot;: [15000.0, 2000.0]
+        }
+    ],
+}
+</code></pre>
+<h2 id="properties">Properties</h2>
+<p>Like with all modded content, the <code>stringId</code> field is mandatory. Additionally, for them to do anything for the player, you must include a <code>boostId</code> property, with the ID of the <a href="../boosts/">boost</a> to grant.</p>
+<p>The resource cost of the upgrade is defined through the <code>costsInspector</code> property, with a special structure:</p>
+<pre><code class="language-json">&quot;costsInspector&quot;: [
+        {
+            &quot;resource&quot;: [4, 1],
+            &quot;value&quot;: [15000.0, 2000.0]
+        }
+    ],
+</code></pre>
+<p><code>resource</code> is a list of the types of resources the upgrade will cost:
+- <code>0</code>: Metal
+- <code>1</code>: Experience
+- <code>2</code>: Candy (not functional? TODO investigate)
+- <code>3</code>: Energy (not deducted; if used, the upgrade will be unpurchasable unless you have excess energy equal or greater than the 'cost')
+- <code>4</code>: Fuel</p>
+<p><code>value</code> is a list of the numeric costs corresponding to each resource. As such, both lists should be of the same length.</p>
+<p>Other properties:
+- <code>name</code>: string, the <a href="../custom-text/">text key</a> to use for the name of the upgrade. The description and flavour text use this same key suffixed with <code>.desc</code> and <code>.flavour</code> respectively. Note that by default, the description of an upgrade is automatically generated from its boost. If you provide your own description, it will be used instead. You can use this to reword boosts with ugly/verbose descriptions.
+- <code>displayIndex</code>: number, higher amounts cause the upgrade to be displayed further on the end of each tier in the upgrades menu.
+- <code>tier</code>: number, the upgrade's tier, as shown in the upgrades menu. Upgrades with a negative tier are hidden from the upgrades menu, but still obtainable through other means (such as conquest).
+- <code>important</code>: boolean, if true, the upgrade will flash red in the upgrades menu, and always have a <code>&lt;!&gt;</code> over it, and will show that same badge over the upgrades menu button on the sidebar until it is bought.
+- <code>guildRestriction</code>: number, restricts this upgrade to players of a specific guild. Values:
+    - <code>-1</code>: default, no guild restriction.
+    - <code>0</code>: Scavenger guild
+    - <code>1</code>: Scientist guild
+    - <code>2</code>: Trader guild
+- <code>mutualExclusivityGroup</code>: string. Upgrades with the same <code>mutualExclusivityGroup</code> cannot be bought together. Once one is bought, the others become hidden from the upgrades menu (but may still be obtained through other means).
+- <code>sprite</code>: string, the <a href="../sprites/">sprite</a> filename.</p>
+<p>Deprecated / not fully-functional properties:</p>
+<ul>
+<li><code>isAscensionUpgrade</code>: boolean. Ascension upgrades are not lost upon Ascending, do not appear in the upgrades menu and and are counted towards Ascension-related achievements and discount boosts. <strong>Note that at the moment, you cannot modify the actual Ascension tree, meaning this property is not fully usable.</strong></li>
+<li><code>maxLevel</code>: number. Deprecated value for creating upgrades that can be bought multiple times to level them up. This requires also filling up the <code>costsInspector</code> field with the right amount of costs. <strong>Multi-level upgrades were abandoned early in the game's development, and as such, likely do not work/display properly anymore and thus this property should not be used.</strong></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ships/" class="btn btn-neutral float-right" title="Ships">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../boosts/" class="btn btn-neutral" title="Boosts"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../boosts/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ships/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

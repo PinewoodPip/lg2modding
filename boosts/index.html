@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://pinewood.team/lg2modding/boosts/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Boosts - Lazy Galaxy 2 Modding Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Boosts";
+    var mkdocs_page_input_path = "boosts.md";
+    var mkdocs_page_url = "/lg2modding/boosts/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Lazy Galaxy 2 Modding Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../campaigns/">Campaigns</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Boosts</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#boost-properties">Boost properties</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#numeric-boosts">Numeric boosts</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#shipcombat-boosts">Ship/combat boosts</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#discounts">Discounts</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#flags">Flags</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#other-fields">Other fields</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#resourceproductionboosts">resourceProductionBoosts</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#multiplicativeresourceproductionboosts">multiplicativeResourceProductionBoosts</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#multiplicativeallproductionboosts">multiplicativeAllProductionBoosts</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#buildingproductionboosts">buildingProductionBoosts</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#shipboosts">shipBoosts</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#buildingunlocks">buildingUnlocks</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#strasteffects">strastEffects</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#completesynergytierboosts">completeSynergyTierBoosts</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#playtimeproductionboosts">playtimeProductionBoosts</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#synergyboosts">synergyBoosts</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#guildboosts">guildBoosts</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#leagueboosts">leagueBoosts</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#strastboosts">strastBoosts</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#synergyscalingexclusions">synergyScalingExclusions</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#clickingextraresourceboosts">clickingExtraResourceBoosts</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#essentialbuildings">essentialBuildings</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#delayedcandyboosts">delayedCandyBoosts</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#previousguildboosts">previousGuildBoosts</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#overflowedenergyproductionboosts">overflowedEnergyProductionBoosts</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#upgradeunlocks">upgradeUnlocks</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../upgrades/">Upgrades</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ships/">Ships</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../abilities/">Abilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ascension/">Ascension</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../food/">Food</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../recipes/">Recipes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sprites/">Sprites</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../custom-text/">Text</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../enums/">Enums</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Lazy Galaxy 2 Modding Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Boosts</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="boosts">Boosts</h1>
+<p>Boosts define the effects of upgrades and food items. Every upgrade and food item from the base game uses them, meaning any effects that you see in the game can be used in your own mod.</p>
+<p>A single boost can contain multiple effects to apply; for example, the Eldritch Burger food gives production multipliers to 4 different buildings, at the same time.</p>
+<p>The game keeps track of all your upgrade multipliers, ship stat increases, unlocks, etc. by merging all your owned boosts into one. Owning an upgrade or a food item applies its boost. In the case of food, it's applied as many times as the amount of the food you have.</p>
+<p>There are 3 base types of boost properties:</p>
+<ul>
+<li>Numeric (double-type), which are simply <strong>added together</strong> to calculate the final value, and (in nearly all cases) accept negative values. These all default to 0.</li>
+<li>Binary/Flags (boolean-type), used for unlocking features. These can only be added, and not removed. For example, the Galaxy Map is unlocked if any owned boost sets the <code>galaxyMap</code> property to <code>true</code>.</li>
+<li>Other, specialized structures with parameters, such as <code>ResourceProductionBoost</code>, which gives a multiplier bonus to the production of a specific resource, optionally making it scale with some other game statistic.</li>
+</ul>
+<h2 id="boost-properties">Boost properties</h2>
+<p>This section lists all properties you can include in a boost, and their in-game effect.</p>
+<p><strong>Unless otherwise specified, multiplier and percentage values are fractional and additive. That means that '1.5' will equal a +150% multiplier in-game, and combined with another boost that adds '2.5', will result in a +400% multiplier.</strong></p>
+<p>Note that "all production", unless otherwise specified, does not affect energy nor candy production.</p>
+<h3 id="numeric-boosts">Numeric boosts</h3>
+<ul>
+<li><code>strangeAsteroidPotency</code>: increases the effects of Strange Asteroids. Each unit (1) is equivalent to upgrading a Scanner by one level. Strange Asteroid effects have a base value, and a scaled value that is multiplied by the Strange Asteroid Potency.</li>
+<li><code>candyEffectMultiplier</code>: adds multiplier to the candy multiplier. Ex. a value of 0.01 will make each candy grant 2% production. Note that candy is multiplicative with all other calculations.</li>
+<li><code>allProductionMultiplier</code>: adds multiplier to the production of all <strong>non-energy</strong> buildings. Note that there are buildings which are unaffected by production multipliers.</li>
+<li><code>asteroidProductionMultiplier</code>: adds multiplier to <strong>all</strong> resources gained from clicking asteroids.</li>
+<li><code>flatEnergy</code>: adds a flat amount of energy.</li>
+<li><code>synergyMultiplier</code>: adds a multiplier for the effects of synergies. Ex. a value of <code>0.5</code> will make numeric synergies 50% stronger. Chunk quirks are unaffected.</li>
+<li><code>candyGainMultiplier</code>: adds a multiplier to the amount of candy you gain upon ascending.</li>
+<li><code>offlineProductionMultiplier</code>: adds a multiplier to offline production. Offline production is capped at 100%. Negative offline production does nothing.</li>
+<li><code>baseAsteroidValue</code>: adds extra base metal to asteroid production.</li>
+<li><code>keyboardStrastMultiplier</code>: adds a multiplier to the chance of Strange Asteroids appearing while mining with the keyboard.</li>
+<li><code>activeProductionMultiplier</code>: adds a multiplier to all production while you're not idling. You're considered idle if you haven't made any input outside of moving the mouse in the last <code>idlingMinutesThreshold</code> minutes, as defined in <a href="global-tuning.md">GlobalTuning</a>.</li>
+<li><code>xpScannerScaling</code>: adds a multiplier to XP production for each level of the Scanner building that you have.</li>
+<li><code>buildingCostsRefund</code>: refunds a percentage of the metal spent on a building (including its level upgrades) when you demolish it. Capped at 100% of the metal spent.</li>
+<li><code>strastChanceMultiplier</code>: adds a multiplier to the chance of Strange Asteroids appearing.</li>
+<li><code>baseStrastChance</code>: adds to the base chance of a Strange Asteroid appearing. The base chance is 1% (0.01), as defined in <a href="global-tuning.md">GlobalTuning</a>.</li>
+<li><code>productionMultiplierPerUniqueBuilding</code>: adds a multiplier to all production for each unique building type currently owned.</li>
+<li><code>allProductionPerStrast</code>: adds a multiplier to all production for each Strange Asteroid destroyed (total), up to a cap defined in <a href="global-tuning.md">GlobalTuning</a>.</li>
+<li><code>lunchboxDoublingChance</code>: adds a chance to gain 2x lunchboxes from a conquest.</li>
+<li><code>allProductionPerNode</code>: adds a multiplier to all production for each galaxy map node conquered in the current ascension.</li>
+<li><code>strastCooldownFlatReduction</code>: reduces the "cooldown" of Strange Asteroids by a flat amount of seconds. For each Strange Asteroid clicked, the chance of finding additional ones is reduced for a certain amount of seconds, with the penalty scaling down linearly as the cooldown approaches 0.</li>
+<li><code>idleProductionMultiplier</code>: adds a multiplier to all production while you're idling.</li>
+<li><code>productionOnMissedStrast</code>: gives X seconds of resource production whenever a Strange Asteroid despawns without having been collected.</li>
+<li><code>allBuildingsOwnedProduction</code>: adds a multiplier to all production if you own every type of building. Does not exclude buildings you currently cannot obtain.</li>
+<li><code>obstacleSpawnMultiplier</code>: adds a multiplier to the amount of obstacles that spawn in each chunk.</li>
+<li><code>randomUnavailableBuildingsCount</code>: makes a certain amount of buildings unavailable to be built in the next ascension. Cannot affect buildings marked as "essential" (see the <code>essentialBuildings</code> boost).</li>
+<li><code>chunkQuirkMultiplier</code>: adds a multiplier to the effect of quantifiable chunk quirks.</li>
+<li><code>startingUpgrades</code>: causes you to start the next ascension with a number of randomly picked upgrades already unlocked, from upgrades that you owned in the previous ascension. Ascension, multi-choice, guild and league upgrades are excluded.</li>
+<li><code>keepUpgrades</code>: allows you to pick a number of owned upgrades to keep for the next ascension. Multi-choice, league and guild upgrades are excluded.</li>
+<li><code>lunchboxT1Chance</code>: adds a chance for Basic-tier 1 recipe foods to appear in lunchboxes.</li>
+<li><code>lunchboxT2Chance</code>: adds a chance for Advanced-tier recipe foods to appear in lunchboxes.</li>
+<li><code>lunchboxT3Chance</code>: adds a chance for Gourmet-tier recipe foods to appear in lunchboxes.</li>
+<li><code>spawnBudget</code>: adds to the "point budget" of spawning enemies in fights. A higher budget means more enemies per fight. Stronger enemies cost more points to spawn. This also works on pre-defined encounters, by placing random enemies from the faction of the last ship to have been spawned from the encounter. Capped in <a href="global-tuning.md">GlobalTuning</a>.</li>
+<li><code>strastEffectDurationMultiplier</code>: adds a multiplier to the duration of Strange Asteroid effects.</li>
+<li><code>resourceConversion</code>: increases the exchange rate for converting fuel to experience at the Administrative Chamber - a feature unlocked if the player's total boost has this boost above 0. <code>0.5</code> equals +50% exchange rate.</li>
+</ul>
+<h4 id="shipcombat-boosts">Ship/combat boosts</h4>
+<ul>
+<li><code>combatExperienceMultiplier</code>: adds multiplier for the experience gained after winning a space fight.</li>
+<li><code>shipDamageMultiplier</code>: damage multiplier for all player ships.</li>
+<li><code>shipHealingMultiplier</code>: multiplier for all healing received by player ships <strong>from abilities</strong>. Does not affect health packs.</li>
+<li><code>shipHealthMultiplier</code>: multiplier for the maximum health of all player ships.</li>
+<li><code>shipFullHpDamageMultiplier</code>: increases damage dealt by player ships at 100% HP.</li>
+<li><code>shipDodgeChance</code>: adds a chance for incoming damage to be negated. Capped by <code>dodgeChanceCap</code> in <a href="global-tuning.md">GlobalTuning</a>.</li>
+<li><code>shipScenarioHealing</code>: heals a % of each ship's health upon winning a fight.</li>
+<li><code>lowHpDR</code>: adds incomgin damage reduction to ships below a certain % health threshold (defined by <code>lowHpThreshold</code> in <a href="global-tuning.md">GlobalTuning</a>).</li>
+<li><code>shipDamageBoostOnAllyDeath</code>: adds a multiplier to player ship damage when an allied, non-summon ship dies, until the end of the expedition.</li>
+<li><code>shipHealthMultiplierPerUniqueShip</code>: adds a multiplier to ship maximum health based on the amount of unique ship types in the fleet upon starting an expedition, until the end of it.</li>
+<li><code>shipRegularResistance</code>: adds a % of "regular-type" incoming damage that is resisted.</li>
+<li><code>healthpackHealing</code>: adds a multiplier to the healing received from health packs.</li>
+<li><code>randomUnavailableShipsCount</code>: makes a certain amount of purchasable ships unavailable to be bought in the next ascension. The starting ship cannot be affected by this.</li>
+<li><code>healthpackIntervalMultiplier</code>: adds a multiplier to the cooldown between health packs spawning.</li>
+<li><code>galaxyMapInfluence</code>: adds a flat amount of "influence" to the current galaxy map. Influence is normally gained after each conquered node, and is used to scale enemy level.</li>
+<li><code>fleetCooldown</code>: increases the cooldown for deploying ships.</li>
+<li><code>fleetSize</code>: increases the amount of ships you can deploy in a fleet. Does not support negative values!</li>
+</ul>
+<h4 id="discounts">Discounts</h4>
+<p>Discount boosts are additive with each other and a flat %, with the exception of the building discount, which follows a diminishing returns formula.</p>
+<ul>
+<li><code>differentGuildDiscount</code>: adds a discount to guild-exclusive upgrades, if the upgrade's associated guild is different from the one you were in the previous ascension.</li>
+<li><code>previousUpgradesDiscount</code>: adds a discount to upgrades that have been bought in previous ascensions.</li>
+<li><code>buildingCostsReduction</code>: adds a <code>(buildingCostsReduction / (buildingCostsReduction + 1))</code> discount to the price of building buildings.</li>
+</ul>
+<h3 id="flags">Flags</h3>
+<ul>
+<li><code>idleStrastBoost</code>: increases the chance of finding Strange Asteroids, if you haven't collected one in over 15 minutes. Scales over the spawn of 20 minutes, up to a 2.5x chance multiplier.</li>
+<li><code>keyboardClicking</code>: allows you to collect asteroids on-screen by jamming on your keyboard. Applies a penalty to Strange Asteroid chance while in use (see the <code>keyboardStrastMultiplier</code> boost).</li>
+<li><code>cookingTier1</code>: allows you to cook Basic-tier recipes.</li>
+<li><code>cookingTier2</code>: allows you to cook Advanced-tier recipes.</li>
+<li><code>cookingTier3</code>: allows you to cook Gourmet-tier recipes.</li>
+<li><code>synergiesTier1</code>: enables Basic-tier synergies.</li>
+<li><code>synergiesTier2</code>: enables Advanced-tier synergies.</li>
+<li><code>synergiesTier3</code>: enables Legendary-tier synergies.</li>
+<li><code>flurryClicking</code>: allows you to click to fire additional bullets when using Flurry-type abilities.</li>
+<li><code>ascension</code>: enables the Ascension button.</li>
+<li><code>chunkQuirks</code>: enables chunk quirks.</li>
+<li><code>galaxyMap</code>: enables the Galaxy map button, and deploying fleets.</li>
+<li><code>combatAbilities</code>: enables combat abilities for your ships.</li>
+<li><code>combatExperienceScaling</code>: multiplies XP gained from combat based on your achievement completion. Having X% of all achievements unlocked equals an X% increase in XP gained.</li>
+<li><code>lunchboxes</code>: enables getting lunchboxes from conquests.</li>
+<li><code>endlessCombat</code>: enables fighting in the space wilderness.</li>
+<li><code>showLunchboxHint</code>: does nothing. Used by lunchboxes to display a "Click to open" hint.</li>
+<li><code>headstart</code>: causes the closest connected node to the galaxy map's starting point to start nearly-fully conquered (with only one fight remaining).</li>
+<li><code>strastLunchbox</code>: causes you to gain a lunchbox when you activate Strange Asteroids while already under the effect of another.</li>
+<li><code>buyAllUpgrades</code>: enables the "buy all upgrades from this tier" button in the upgrades menu.</li>
+<li><code>multiSelect</code>: enables multi-selecting buildings with shift+click.</li>
+<li><code>multiCasting</code>: allows you to have all ships of one type fire their abilities at once by shift+clicking the ability.</li>
+<li><code>loadouts</code>: enables saving and buying fleet loadouts.</li>
+<li><code>galaxyMapQueue</code>: enables you to queue up locations to conquer on the galaxy map by right clicking nodes. If the queue is not empty and you have a loadout save when you lose, you will automatically try to deploy a new fleet of that loadout once the deployment cooldown runs out.</li>
+<li><code>autoHealthpacks</code>: enables automatically collecting health packs, right before they would normally despawn.</li>
+</ul>
+<h3 id="other-fields">Other fields</h3>
+<p>The following boosts use more complex structures; you need to be careful to follow their format. You do not need to include all the sub-properties they have. Unmentioned ones will be set to a default value (almost always 0/false).</p>
+<p>Most of these are lists, meaning you can stack multiple instances of their effect onto a single boost. This is useful in case you want to, for example, create an upgrade that increases both metal and experience production, by different amounts.</p>
+<h4 id="resourceproductionboosts">resourceProductionBoosts</h4>
+<p>A list of boosts which modify the production of a specific resource.</p>
+<p>Example: increases experience production by 100%, +1% per achievement unlocked, +5% per synergy active, +5% per building owned, +2% per food cooked, and +1% for each click in the last minute.</p>
+<pre><code class="language-json">&quot;resourceProductionBoosts&quot;: [
+        {
+            &quot;resourceId&quot;: 1,
+            &quot;multiplier&quot;: 1,
+            &quot;multiplierPerAchievement&quot;: 0.01,
+            &quot;multiplierPerSynergy&quot;: 0.05,
+            &quot;multiplierPerBuilding&quot;: 0.05,
+            &quot;multiplierPerFoodCookedTotal&quot;: 0.02,
+            &quot;multiplierPerClick&quot;: 0.01
+        }
+    ],
+</code></pre>
+<p>Properties:</p>
+<ul>
+<li><code>resourceId</code>: number, the ID of the resource to apply the effects to. See <a href="../enums/#resources">resources enumeration</a></li>
+<li><code>multiplier</code>: number, an unconditional multiplier for the resource's production.</li>
+<li><code>multiplierPerAchievement</code>: number, adds a multiplier to the resource's production for each achievement level owned.</li>
+<li><code>multiplierPerSynergy</code>: number, adds a multiplier for each synergy active.</li>
+<li><code>multiplierPerBuildings</code>: number, adds a multiplier for each building owned.</li>
+<li><code>multiplierPerFoodCooked</code>: number, adds a multiplier for each food item cooked in the current Ascension.</li>
+<li><code>multiplierPerFoodCookedTotal</code>: number, adds a multiplier for each food item cooked across all Ascensions.</li>
+<li><code>multiplierPerClick</code>: number, adds a multiplier for each asteroid click in the last minute.</li>
+</ul>
+<h4 id="multiplicativeresourceproductionboosts">multiplicativeResourceProductionBoosts</h4>
+<p>Similar to a <code>ResourceProductionBoost</code>, but increases production multiplicatively instead of adding to an existing multiplier.</p>
+<p>Example:</p>
+<p>Doubles metal production and halves experience production.</p>
+<pre><code class="language-json">&quot;multiplicativeResourceProductionBoosts&quot;: [
+        {&quot;resource&quot;: 0, &quot;multiplicativeBoost&quot;: 2},
+        {&quot;resource&quot;: 1, &quot;multiplicativeBoost&quot;: 0.5},
+    ],
+</code></pre>
+<p>Properties:</p>
+<ul>
+<li><code>resourceId</code>: number, the ID of the resource to apply the effects to. See <a href="../enums/#resources">resources enumeration</a></li>
+<li><code>multiplicativeBoost</code>: number, the multiplier. Ex. '2' equals 2x.</li>
+</ul>
+<h4 id="multiplicativeallproductionboosts">multiplicativeAllProductionBoosts</h4>
+<p>Similar to <code>multiplicativeResourceProductionBoosts</code>, but affects "all production". That is, all resource production except candy and energy.</p>
+<p>Example:</p>
+<p>Halves all resource production.</p>
+<pre><code class="language-json">&quot;multiplicativeAllProductionBoosts&quot;: [
+        {&quot;multiplicativeBoost&quot;: 0.5}
+    ],
+</code></pre>
+<p>Properties:</p>
+<ul>
+<li><code>multiplicativeBoost</code>: number, the multiplier. '2' equals 2x.</li>
+</ul>
+<h4 id="buildingproductionboosts">buildingProductionBoosts</h4>
+<p>A list of boosts to specific buildings.</p>
+<p>Example:</p>
+<p>Increases Metal Mine's base production by 1 metal, reduces energy consumption by 50% and multiplies their overall production by 2x.</p>
+<pre><code class="language-json">&quot;buildingProductionBoosts&quot;: [
+        {
+            &quot;buildingId&quot;: &quot;metal_mine&quot;,
+            &quot;baseProduction&quot;: 1.0,
+            &quot;multiplier&quot;: 0.0,
+            &quot;energyConsumptionMutliplier&quot;: -0.5,
+            &quot;multiplicativeBoost&quot;: 2.0
+        }
+    ],
+</code></pre>
+<p>Properties:</p>
+<ul>
+<li><code>buildingId</code>: string, the ID of the building to apply the effects to. Leave as "" to affect all buildings. See <a href="../enums/#buildings">building types</a>.</li>
+<li><code>affectAll</code>: boolean, same effect as setting <code>buildingId</code> to an empty string.</li>
+<li><code>baseProduction</code>: number, increases the base resource production of the building by a flat amount.</li>
+<li><code>multiplier</code>: number, adds to the multiplier of the building's production.</li>
+<li><code>energyConsumptionMultiplier</code>: number, adds to the multiplier for the building's energy consumption. Ex. 0.5 makes the build use up 50% more energy.</li>
+<li><code>extraBuildingLimit</code>: number, increases the building's building placement limit, if it has one set.</li>
+</ul>
+<h4 id="shipboosts">shipBoosts</h4>
+<p>A list of boosts to specific player ships.</p>
+<p>Example:</p>
+<p>Gives the Wasp 100% more health (additive, as is the case with all boosts unless otherwise specified) and makes its active ability shoot 2 more bullets.</p>
+<pre><code class="language-json">&quot;shipBoosts&quot;: [
+        {
+            &quot;shipId&quot;: &quot;wasp&quot;,
+            &quot;healthMultiplier&quot;: 1.0,
+            &quot;abilityShotgunBullets&quot;: 2
+        }
+    ],
+</code></pre>
+<p>Properties:</p>
+<ul>
+<li><code>shipId</code>: string, the ID of the ship this effect applies to. See <a href="../enums/#ships">ship types</a>.</li>
+<li><code>affectAllShips</code>: boolean, if true, this set of boosts will apply to all ships.</li>
+<li><code>healthMultiplier</code>: number, adds to the multiplier of the ship's maximum health.</li>
+<li><code>damageMultiplier</code>: number, adds to the multiplier of the ship's damage.</li>
+<li><code>abilityShotgunBullets</code>: integer, adds an amount of extra bullets fired for Shotgun-type abilities.</li>
+<li><code>abilityExplosionRadiusBoost</code>: number, increases the radius of AoE attacks.</li>
+<li><code>abilityShotgunAngle</code>: number, increases the firing angle of Shotgun-type abilities.</li>
+<li><code>accurate</code>: boolean, if true, the ship will never fail accuracy checks*.</li>
+<li><code>healingDoT</code>: number, heals the ship by a percentage of its health every <code>healingDoTTickRate</code> seconds, as defined in <a href="global-tuning.md">GlobalTuning</a>).</li>
+<li><code>critChance</code>: number, adds a chance to deal critical hits with attacks. Critical hits get a multiplier applied to them, 3x by default.</li>
+<li><code>fleetUniqueHealthMultiplier</code>: number, adds to the ship's health multiplier for each unique ship type in the fleet at the start of an expedition.</li>
+<li><code>fleetUniqueDamageMultiplier</code>: number, adds to the ship's damage multiplier for each unique ship type in the fleet at the start of an expedition.</li>
+<li><code>dodgeAtFullHealth</code>: number, adds dodge chance when the ship is at full health. Dodging an attack completely negates its damage and any other effects of the hit.</li>
+<li><code>cooldownPercentageReduction</code>: number, reduces the cooldown of <strong>active</strong> abilities by a percentage.</li>
+<li><code>volatileDamageForQuickFight</code>: number, adds to the ship's damage multiplier if the previous fight was completed in less than <code>shortFightDuration</code> seconds, as defined in <a href="global-tuning.md">GlobalTuning</a>). Does not stack, and is removed after a battle that did not meet the criteria.</li>
+<li><code>comebackChance</code>: number, adds a chance for the ship to be healed for a percentage of its health instead of dying, once per expedition. The healing is defined in <a href="global-tuning.md">GlobalTuning</a>) as <code>comebackFractionHealing</code>.</li>
+<li><code>healingOnAbility</code>: number, heals ships that use their active ability for a fraction of their maximum health.</li>
+<li><code>damageMultiplierPerEnemy</code>: number, adds to the ship's damage multiplier for each enemy present at the start of a fight.</li>
+</ul>
+<p>*Abilities that are marked as "homing" have a chance to not home into the target and instead deviate by a few degrees. This chance is determined by the speed of the attacker and the target. Slower ships have a lesser chance to fire homing projectiles onto faster ships.</p>
+<h4 id="buildingunlocks">buildingUnlocks</h4>
+<p>A list of buildings that the boost unlocks for construction. See <a href="../enums/#buildings">building types</a>.</p>
+<p>Example:</p>
+<p>Unlocks the Metal Mine and Academy buildings.</p>
+<pre><code class="language-json">    &quot;buildingUnlocks&quot;: [&quot;metal_mine&quot;, &quot;academy&quot;],
+</code></pre>
+<h4 id="strasteffects">strastEffects</h4>
+<p>A list of Strange Asteroid effects that the boost unlocks. See <a href="../enums/#strange-asteroid-types">strast types</a>.</p>
+<p>Example: unlocks the Gambler's asteroid (the one that randomizes production for X seconds)</p>
+<pre><code class="language-json">    &quot;strastEffects&quot;: [&quot;randomized_production&quot;],
+</code></pre>
+<h4 id="completesynergytierboosts">completeSynergyTierBoosts</h4>
+<p>Adds to the all production multiplier when all synergies of a specified tier are active. See <a href="../enums/#synergy-tiers">synergy tier IDs</a>.</p>
+<p>Example: adds 100% all production if all basic synergies are active, and +200% if all advanced synergies are active.</p>
+<pre><code class="language-json">&quot;completeSynergyTierBoosts&quot;: [
+        {&quot;tier&quot;: 1, &quot;multiplier&quot;: 1},
+        {&quot;tier&quot;: 2, &quot;multiplier&quot;: 2}
+    ],
+</code></pre>
+<p>Properties:
+- <code>tier</code>: number, the synergy tier to require. See <a href="../enums/#synergy-tiers">synergy tier IDs</a>.
+- <code>multiplier</code>: number, adds to the all production multiplier if all synergies from the tier are active.</p>
+<h4 id="playtimeproductionboosts">playtimeProductionBoosts</h4>
+<p>Adds to the all production multiplier, based on how much time has elapsed since you started your playthrough.</p>
+<p>Example: adds +1% fuel production for each minute since you started playing, up to +300%.</p>
+<pre><code class="language-json">&quot;playtimeProductionBoosts&quot;: [
+        {
+            &quot;resource&quot;: 4,
+            &quot;increment&quot;: 0.01,
+            &quot;interval&quot;: 60,
+            &quot;maximum&quot;: 3
+        }
+    ],
+</code></pre>
+<h4 id="synergyboosts">synergyBoosts</h4>
+<p>Makes a specific synergy stronger.</p>
+<p>Example: makes Tunnel System synergies 100% more powerful.</p>
+<pre><code class="language-json">&quot;synergyBoosts&quot;: [
+        {
+            &quot;id&quot;: 0,
+            &quot;multiplier&quot;: 1
+        }
+    ],
+</code></pre>
+<p>Properties:</p>
+<ul>
+<li><code>id</code>: number, the ID of the synergy to affect. See <a href="../enums/#synergies">synergy IDs</a>.</li>
+<li><code>multiplier</code>: number, adds to the multiplier of the synergy's effect.</li>
+</ul>
+<h4 id="guildboosts">guildBoosts</h4>
+<p>Adds a multiplier to all production for each time you join a specific guild.</p>
+<p>Example: adds +150% all production for each time you join the Scavenger guild.</p>
+<pre><code class="language-json">&quot;guildBoosts&quot;: [
+        {
+            &quot;id&quot;: 0,
+            &quot;multiplierPerJoin&quot;: 1.5
+        }
+    ],
+</code></pre>
+<p>Properties:
+- <code>id</code>: number, the ID of the guild to use for the effect. See <a href="../enums/#guilds">guild IDs</a>.
+- <code>multiplierPerJoin</code>: number, adds to the all production multiplier for each time you joined the guild.</p>
+<h4 id="leagueboosts">leagueBoosts</h4>
+<p>Similar to a <code>GuildBoost</code>, but for leagues! Wow!</p>
+<p>Example: adds +50% to all production for each time you've joined the Schemist league.</p>
+<pre><code class="language-json">&quot;leagueBoosts&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;multiplierPerJoin&quot;: 0.5
+        }
+    ],
+</code></pre>
+<p>Properties:
+- <code>id</code>: number, the ID of the league to use for the effect. See <a href="../enums/#leagues">league IDs</a>.
+- <code>multiplierPerJoin</code>: number, adds to the all production multiplier for each time you joined the league.</p>
+<h4 id="strastboosts">strastBoosts</h4>
+<p>Makes a specific Strange Asteroid effect stronger.</p>
+<p>Example: makes the Gambler's asteroid 100% stronger.</p>
+<pre><code class="language-json">&quot;strastBoosts&quot;: [
+        {
+            &quot;stringId&quot;: &quot;randomized_production&quot;,
+            &quot;multiplier&quot;: 1
+        }
+    ],
+</code></pre>
+<p>Properties:
+- <code>stringId</code>: string, the ID of the Strange Asteroid effect to affect. See <a href="../enums/#strange-asteroid-effects">Strange Asteroid effect IDs</a>.
+- <code>multiplier</code>: number, adds to the multiplier of the effect's strength. This is a separate multiplier from the scaling gained from Scanner levels.</p>
+<h4 id="synergyscalingexclusions">synergyScalingExclusions</h4>
+<p>A list of Synergies to exclude from scaling with any boosts that increase their strength. This affects all boosts, not just the one this is included in. Chunk quirks are unaffected. See <a href="../enums/#synergies">synergy IDs</a>.</p>
+<p>Example: makes Unlucky Luck, Spectroscopy and Fractal Matter unable to gain bonuses from boosts that would scale them.</p>
+<pre><code class="language-json">    &quot;synergyScalingExclusions&quot; = [17, 9, 22],
+</code></pre>
+<h4 id="clickingextraresourceboosts">clickingExtraResourceBoosts</h4>
+<p>Increases the resources you gain from clicking asteroids by a percentage of your production per second.</p>
+<p>Example: makes asteroids give +1% of your Metal production, per Metal Mine built.</p>
+<pre><code class="language-json">    &quot;clickingExtraResourceBoosts&quot;: [
+        {
+            &quot;id&quot;: 0,
+            &quot;multiplier&quot;: 0.01,
+            &quot;buildingAmountScaling&quot;: &quot;metal_mine&quot;
+        }
+    ],
+</code></pre>
+<h4 id="essentialbuildings">essentialBuildings</h4>
+<p>A list of buildings that cannot be made unavailable by the <code>randomUnavailableBuildingsCount</code> boost.</p>
+<p>Example: the vanilla list of essential buildings.</p>
+<pre><code class="language-json">    &quot;essentialBuildings&quot;: [&quot;metal_mine&quot;, &quot;academy&quot;, &quot;pumpjack&quot;, &quot;research_lab&quot;, &quot;scanner&quot;, &quot;solar_panel&quot;],
+</code></pre>
+<h4 id="delayedcandyboosts">delayedCandyBoosts</h4>
+<p>Adds to the multiplier of candy gained upon ascending, for each real-life day elapsed since your last ascension.</p>
+<p>Example: increases candy gained from ascending by +100% for each day elapsed, up to +200%.</p>
+<pre><code class="language-json">    &quot;delayedCandyBoosts&quot;: [
+        {
+            &quot;multiplier&quot;: 1,
+            &quot;daysCap&quot;: 2
+        }
+    ],
+</code></pre>
+<p>Properties:
+- <code>multiplier</code>: number, the multiplier added for each day elapsed.
+- <code>daysCap</code>: number, the maxmimum amount of days this effect stacks for.</p>
+<h4 id="previousguildboosts">previousGuildBoosts</h4>
+<p>Adds to the all production multiplier if your previous guild was the one specified.</p>
+<p>Example: increases all production by 50% if your previous guild was the Scientist guild.</p>
+<pre><code class="language-json">    &quot;previousGuildBoosts&quot;: [
+        {&quot;id&quot;: 1, &quot;multiplier&quot;: 0.5}
+    ],
+</code></pre>
+<p>Properties:
+- <code>id</code>: number, the ID of the guild to require. See <a href="../enums/#guilds">guild IDs</a>.
+- <code>multiplier</code>: number, adds to the all production multiplier if your previous guild was the one specified in this effect.</p>
+<h4 id="overflowedenergyproductionboosts">overflowedEnergyProductionBoosts</h4>
+<p>Adds to the all production multiplier, scaling with the amount of excess energy that you have (energy over your required amount for optimal building production).</p>
+<p>Example: adds +1% to all production for each 1 energy over your optimum amount, up to +100%.</p>
+<pre><code class="language-json">&quot;overflowedEnergyProductionBoosts&quot;: [
+        {
+            &quot;multiplier&quot;: 0.01,
+            &quot;additiveCap&quot;: 1
+        }
+    ],
+</code></pre>
+<p>Properties:
+- <code>multiplier</code>: number, adds to the all production multiplier for each point of excess energy.
+- <code>additiveCap</code>: number, the cap to the multiplier you can get from this effect.</p>
+<h4 id="upgradeunlocks">upgradeUnlocks</h4>
+<p>A list of upgrades to unlock upon the boost being first applied, or upon ascending. Only works as a boost for upgrades, not food items. Used in the vanilla game for the ascension upgrades that make you start with buildings already unlocked, by unlocking their upgrades (so as to hide them from the upgrades screen).</p>
+<p><strong>To reference your own upgrades, you must prefix them with your mod ID and an underscore.</strong></p>
+<p>Example: unlocks the upgrade that allows building academies.</p>
+<pre><code class="language-json">    &quot;upgradeUnlocks&quot;: [&quot;academy_unlock&quot;],
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../upgrades/" class="btn btn-neutral float-right" title="Upgrades">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../campaigns/" class="btn btn-neutral" title="Campaigns"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../campaigns/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../upgrades/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

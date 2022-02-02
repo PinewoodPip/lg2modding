@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://pinewood.team/lg2modding/abilities/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Abilities - Lazy Galaxy 2 Modding Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Abilities";
+    var mkdocs_page_input_path = "abilities.md";
+    var mkdocs_page_url = "/lg2modding/abilities/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Lazy Galaxy 2 Modding Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../campaigns/">Campaigns</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../boosts/">Boosts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../upgrades/">Upgrades</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ships/">Ships</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Abilities</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#common-properties">Common properties</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#archetypes">Archetypes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#projectile">projectile</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#summon">summon</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bulletdetonation">bulletDetonation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#summonsuicide">summonSuicide</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#explosive">explosive</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#healing">healing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#flurry">flurry</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ascension/">Ascension</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../food/">Food</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../recipes/">Recipes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sprites/">Sprites</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../custom-text/">Text</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../enums/">Enums</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Lazy Galaxy 2 Modding Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Abilities</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="abilities">Abilities</h1>
+<p>Abilities refer both to the active abilities of ships, as well as their automatic weapons. They are defined in the <code>Abilities</code> folder.</p>
+<p>Aside from the mandatory <code>stringId</code> field, abilities must also define an <code>archetype</code>. The archetype defines the behaviour of the ability, each of them having additional properties specific to them.</p>
+<p>The words "user ship" and "caster" here refer to the ship using the ability.</p>
+<h2 id="common-properties">Common properties</h2>
+<p>These properties can be set on any ability.</p>
+<ul>
+<li><code>icon</code>: string, the <a href="../sprites/">sprite</a> filename for the ability icon.</li>
+<li><code>abilityNameTranslationKey</code>: string, the <a href="../custom-text/">text key</a> for the ability's name. Shown when you hover over a ship in the fleet menu that has this ability as an active.</li>
+<li><code>abilityDescriptionTranslationKey</code> string, the <a href="../custom-text/">text key</a> for the ability's description. Shown when you hover over a ship in the fleet menu that has this ability as an active. Supports parameters, see the <a href="../custom-text/#ability-parameters">text docs</a>.</li>
+<li><code>target</code>: number, determines who this ability is <em>aimed</em> at.<ul>
+<li><code>0</code>: Enemies of the caster (the ability's user)</li>
+<li><code>1</code>: Allies of the caster</li>
+<li><code>2</code>: The caster only</li>
+</ul>
+</li>
+<li><code>charges</code>: number, the maximum amount of charges the ability can store. An ability can be used so long as it has charges remaining. Defaults to <code>1</code>.</li>
+<li><code>cooldown</code>: number, the time between the ability's charges being restored. Defaults to <code>0.2</code>.</li>
+<li><code>firingDelay</code>: number, a minimum delay between charges of the ability being usable.</li>
+<li><code>onlyReloadAtNoCharges</code>: boolean. If <code>false</code>, 1 charge of the ability will be replenished every <code>cooldown</code> seconds. If <code>true</code>, all charges will be replenished after <code>cooldown</code> seconds once charges reach 0. Use <code>true</code> to create weapons that reload their whole clip at once. Defaults to <code>true</code>.</li>
+<li><code>canBeAutoFired</code>: boolean, determines if the ship can use this ability automatically. Use <code>false</code> for active abilities.</li>
+<li><code>manuallyAimed</code>: boolean, determines if the ability should be aimed with the player's cursor.</li>
+<li><code>duration</code>: number, the duration of the ability. If &gt;0, the ability is considered a durative ability; by default, no other abilities can be used alongside a durative ability until its duration ends.</li>
+<li><code>ignoreShipBusyState</code>: boolean, if true, the ability will be usable even while the ship is using a durative ability.</li>
+<li><code>hitAllies</code>: boolean, if true, the ability will be able to hit allies of the caster.</li>
+<li><code>hitSelf</code>: boolean, if true, the ability will be able to hit the caster.</li>
+<li><code>setAimingCursor</code>: boolean, if true, the cursor will be set to a crosshair when using the ability, if it is a durative one.</li>
+<li><code>useSound</code>: number, the sound to play when the ability is used. See <a href="../enums/#sounds">sounds enumeration</a>.</li>
+<li><code>statusesApplied</code>: list of status effects to apply to the target, with the following structure:</li>
+</ul>
+<pre><code>    &quot;statusesApplied&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;duration&quot;: 5
+        }
+    ],
+</code></pre>
+<p>Where <code>id</code> is the ID of the status effect, and <code>duration</code> is the duration in seconds. Available status effects are:</p>
+<ul>
+<li><code>0</code>: "Guardian Angel"; multiplies damage taken by <code>shieldStatusRedirectedDamage</code> (defined in <a href="global-tuning.md">GlobalTuning</a>), and redirects that portion to the ship that applied the status as unresistable damage. Used by the Tortoise.</li>
+<li><code>1</code>: Disarm; prevents the ship from using any abilities.</li>
+<li><code>2</code>: Shielded; multiplies damage taken by <code>shieldedStatusMultiplier</code>, defined in <a href="global-tuning.md">GlobalTuning</a>.</li>
+<li><code>3</code>: Reflect; causes most projectiles that were to hit the ship to be reflected back to their caster. Reflected projectiles are always homing.</li>
+</ul>
+<h2 id="archetypes">Archetypes</h2>
+<p>The <code>archetype</code> field of an ability defines its behaviour. The available archetypes are the following:</p>
+<h3 id="projectile">projectile</h3>
+<p>Projectile abilities create projectiles that move across the screen, and land hits upon colliding with a valid target. Multiple other archetypes are based on it, inheriting its properties:</p>
+<ul>
+<li><code>dmgMultiplier</code>: number, the multiplier for the ability's damage. Ex. <code>1.5</code> will deal 150% of the ship's damage.</li>
+<li><code>damageType</code>: number, the type of damage the ability deals. See <a href="../enums/#damage-type">damage type enumeration</a>.</li>
+<li><code>homingByDefault</code>: boolean, if true, the projectile will home into its target, unless it missed*. Defaults to <code>true</code>.</li>
+<li><code>travelSpeed</code>: number, the speed of the projectile. Default is <code>100</code>.</li>
+<li><code>unmissable</code>: boolean, if true, the ability will not miss if it's also set to be homing.</li>
+<li><code>projectileRendererScale</code>: number, a multiplier for the scale of the projectile. Defaults to <code>1</code>.</li>
+<li><code>piercing</code>: boolean, if true, the projectile will not be deleted upon landing a hit and will instead turn into a non-homing projectile (if it was homing) and continue travelling in a straight line, possibly hitting additional targets.</li>
+<li><code>hitCooldown</code>: number, the duration (in seconds) that must pass before a ship can be hit again by the same projectile. Used for piercing projectiles. Defaults to <code>0.2</code>.</li>
+<li><code>lifetime</code>: number, the duration (in seconds) that this projectile can exist for before disappearing. Defaults to <code>10</code>.</li>
+<li><code>explodeAtCursor</code>: boolean, if true, the projectile will pass through any targets and only explode at the position the cursor was on when it was cast. Only intended to be used for active player abilities.</li>
+<li><code>firingAngle</code>: number, offsets the aiming direction of the projectile, in degrees. Normally projectiles are fired towards their target; this property lets you add a degree offset.</li>
+<li><code>impactSound</code>: number, the sound the projectile will make upon landing a hit. See <a href="../enums/#sounds">sounds enumeration</a>.</li>
+<li><code>projectileSpriteOverride</code>: string, the <a href="../sprites/">sprite</a> filename for the projectile.</li>
+</ul>
+<p>*Abilities that are marked as "homing" have a chance to not home into the target and instead deviate by a few degrees. This chance is determined by the speed of the attacker and the target. Slower ships have a lesser chance to fire homing projectiles onto faster ships.</p>
+<h3 id="summon">summon</h3>
+<p>Summon-type abilities summon a ship when used. Summons are temporary ships that do not return to your fleet after finishing an expedition. Used by the Queen ship.</p>
+<p>Specific properites:</p>
+<ul>
+<li><code>summonedShip</code>: string, the ID of the ship to summon. See <a href="../enums/#ships">ship types</a>. To use your custom ships, you must prefix their ID with your mod ID and an underscore.</li>
+<li><code>summonRadius</code>: number, the radius (centered on caster) within which the ship is summoned.</li>
+<li><code>maxSummons</code>: number, the ability will do nothing if the caster already has this amount of summons, or more, regardless of what ability they came from.</li>
+</ul>
+<h3 id="bulletdetonation">bulletDetonation</h3>
+<p>BulletDetonation-type abilities remove all of the ship's current bullets on the field, then cast an ability from their place. Used by the Porcupine ship for its shrapnel ability.</p>
+<p>Specific properites:</p>
+<ul>
+<li><code>boundAbility</code>: string, the ID of the ability to cast. <em>Does not need to be prefixed with your mod ID.</em></li>
+</ul>
+<h3 id="summonsuicide">summonSuicide</h3>
+<p>Orders the user ship's summons to crash into enemy ships, destroying themselves in the process. Used by the Queen ship's active ability.</p>
+<p>Specific properites:</p>
+<ul>
+<li><code>summonSuicideAmount</code>: number, the maximum amount of summons to suicide at once.</li>
+<li><code>damageMultiplier</code>: number, a multiplier to the damage dealt by the ships suiciding. The damage dealt by ships suiciding is equal to their maxmimum health.</li>
+</ul>
+<h3 id="explosive">explosive</h3>
+<p>Causes an Area-of-Effect hit. <strong>Inherits properties from the <code>projectile</code> archetype.</strong></p>
+<p>Specific properites:</p>
+<ul>
+<li><code>areaRadius</code>: number, the radius of the explosion. 100 by default.</li>
+<li><code>explodeOnSelf</code>: boolean, if true, the explosion will be centered on the caster, and will not create a projectile (it will explode almost instantly).</li>
+</ul>
+<h3 id="healing">healing</h3>
+<p>Similar to <code>explosive</code>, but can deal percentage-based healing. Used by the Plover's active ability. <strong>Inherits properties from the <code>explosive</code> archetype.</strong></p>
+<p>Specific properites:</p>
+<ul>
+<li><code>fractionHealing</code>: number, the fraction of the user ship's maximum HP that the ability will heal for.</li>
+</ul>
+<h3 id="flurry">flurry</h3>
+<p>Flurry abilities cause the user ship to fire an additional ability while they're active (during their <code>duration</code>, which must be &gt; 0 for this ability type to work). Used by the Gecko's active ability for its "manual firing mode".</p>
+<p>Properties:</p>
+<ul>
+<li><code>boundAbility</code>: string, the ID of the ability to use while the flurry is active. Must be a <code>projectile</code>-type ability, or one that inherits properties from it. This ability must have <code>ignoreShipBusyState</code> set to <code>true</code>, otherwise it will not fire. It must also have <code>canAutoFire</code> set to <code>false</code>.</li>
+<li><code>clickingAbility</code>: string, the ID of the ability to use instead of <code>boundAbility</code> while the player is manually clicking on the battlefield. This requires the player to have the <code>flurryClicking</code> boost. While being used, the cooldown for <code>boundAbility</code> is repeatedly set to <code>0.25</code> so they cannot be used at the same time.</li>
+<li><code>requiresClicking</code>: boolean, if true, the <code>boundAbility</code> will not be used, only the <code>clickingAbility</code> (which requires the player to click).</li>
+<li><code>maxClicksPerSecond</code>: number, the maximum clicks per second that the <code>clickingAbility</code> admits. Set to negative to disable this limit.</li>
+</ul>
+<p><strong>You do not need to prefix the ability IDs with your mod's ID.</strong></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ascension/" class="btn btn-neutral float-right" title="Ascension">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../ships/" class="btn btn-neutral" title="Ships"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../ships/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ascension/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

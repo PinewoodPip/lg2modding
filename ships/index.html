@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://pinewood.team/lg2modding/ships/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Ships - Lazy Galaxy 2 Modding Docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Ships";
+    var mkdocs_page_input_path = "ships.md";
+    var mkdocs_page_url = "/lg2modding/ships/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Lazy Galaxy 2 Modding Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../campaigns/">Campaigns</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../boosts/">Boosts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../upgrades/">Upgrades</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Ships</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#example">Example</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#properties">Properties</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../abilities/">Abilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ascension/">Ascension</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../food/">Food</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../recipes/">Recipes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sprites/">Sprites</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../custom-text/">Text</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../enums/">Enums</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Lazy Galaxy 2 Modding Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Ships</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="ships">Ships</h1>
+<p>Custom ships go in the <code>Ships</code> folder.</p>
+<h2 id="example">Example</h2>
+<p>A tanky, slow-moving ship with 2 automatic abilities.</p>
+<pre><code class="language-json">{
+    &quot;stringId&quot;: &quot;testship&quot;,
+    &quot;nameKey&quot;: &quot;ship.example&quot;,
+    &quot;speed&quot;: 30,
+    &quot;baseDmg&quot;: 2,
+    &quot;baseHp&quot;: 80,
+    &quot;dmgGrowth&quot;: 1,
+    &quot;hpGrowth&quot;: 20,
+    &quot;baseCost&quot;: 8000,
+    &quot;costMultiplier&quot;: 1.03,
+    &quot;baseUpgradeCost&quot;: 4000,
+    &quot;upgradeCostMultiplier&quot;: 1.03,
+    &quot;shopIndex&quot;: 1,
+    &quot;deathSound&quot;: 19,
+    &quot;sprite&quot;: &quot;ship_1.png&quot;,
+    &quot;automaticAbilities&quot;: [
+        &quot;summon_ability&quot;,
+        &quot;spiral_ability&quot;
+    ]
+}
+</code></pre>
+<h2 id="properties">Properties</h2>
+<p>As with all modded content, the <code>stringId</code> field is essential.</p>
+<ul>
+<li><code>nameKey</code>: string, the <a href="../custom-text/">text key</a> to use for the name of the ship. The description uses this same key suffixed with <code>.desc</code>. </li>
+<li><code>purchasable</code>: boolean, determines if the ship appears in the fleet menu and can be bought. Defaults to true.</li>
+<li><code>speed</code>: number, the movement speed of the ship. The Wasp's speed is 180. Defaults to 50.</li>
+<li><code>orbitRadius</code>: number, determines how far away from the center of the "combat ring" the ship orbits. The Wasp has this set to 120. Default is 100.</li>
+<li><code>size</code>: number, determines how many particles to spawn when this ship is destroyed. Defaults to 1.<ul>
+<li><code>0</code>: Small, 2 particles</li>
+<li><code>1</code>: Medium, 3 particles</li>
+<li><code>2</code>: Large, 6 particles</li>
+</ul>
+</li>
+<li><code>baseDmg</code>: number, the base damage this ship deals. Defaults to 3 (Wasp's value).</li>
+<li><code>baseHp</code>: number, the base HP of the ship. Defaults to 40 (Wasp's value).</li>
+<li><code>automaticAbilities</code>: list of string IDs of the abilities the ship will automatically use. Use to define the automatic attack(s).</li>
+<li><code>activeAbility</code>: string, the ID of the active ability of the ship - the one used when the player clicks on the ship.</li>
+<li><code>shopIndex</code>: number, determines the position of the ship in the fleet shop menu. Lower indexes get placed higher.</li>
+<li><code>hpGrowth</code>: number, the amount of HP the ship gains with each level after the first one.</li>
+<li><code>dmgGrowth</code>: number, the amount of extra damage the ship gains with each level after the first one.</li>
+<li><code>turningSpeed</code>: number, the ship's turning speed in degrees/s while the ship is not moving on the "combat ring". Used by the Wolf.</li>
+<li><code>baseCost</code>: number, the base metal cost to buy the ship.</li>
+<li><code>costMultiplier</code>: number, multiplies base cost for every level after 1. The formula therefore being <code>baseCost * costMultiplier^(level - 1)</code></li>
+<li><code>baseUpgradeCost</code>: number, the base cost of upgrading the ship.</li>
+<li><code>upgradeCostMultiplier</code>: number, multiplies the base upgrade cost for every level after 1. The formula is <code>baseUpgradeCost * (upgradeCostMultiplier^(level + 1) / (upgradeCostMultiplier - 1));</code></li>
+<li><code>sprite</code>: string, the <a href="../sprites/">sprite</a> filename for the ship.</li>
+<li><code>deathSound</code>: number, sound to play upon the ship's death. See <a href="../enums/#sounds">sounds enumeration</a>.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../abilities/" class="btn btn-neutral float-right" title="Abilities">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../upgrades/" class="btn btn-neutral" title="Upgrades"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../upgrades/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../abilities/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
