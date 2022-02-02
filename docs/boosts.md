@@ -22,7 +22,7 @@ Note that "all production", unless otherwise specified, does not affect energy n
 
 - `strangeAsteroidPotency`: increases the effects of Strange Asteroids. Each unit (1) is equivalent to upgrading a Scanner by one level. Strange Asteroid effects have a base value, and a scaled value that is multiplied by the Strange Asteroid Potency.
 - `candyEffectMultiplier`: adds multiplier to the candy multiplier. Ex. a value of 0.01 will make each candy grant 2% production. Note that candy is multiplicative with all other calculations.
-- `allProductionMultiplier`: adds multiplier to the production of all **non-energy** buildings. Note that there are buildings which are unaffected by production multipliers (TODO: which ones?).
+- `allProductionMultiplier`: adds multiplier to the production of all **non-energy** buildings. Note that there are buildings which are unaffected by production multipliers.
 - `asteroidProductionMultiplier`: adds multiplier to **all** resources gained from clicking asteroids.
 - `flatEnergy`: adds a flat amount of energy.
 - `synergyMultiplier`: adds a multiplier for the effects of synergies. Ex. a value of `0.5` will make numeric synergies 50% stronger. Chunk quirks are unaffected.
