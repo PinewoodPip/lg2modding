@@ -10,7 +10,7 @@ You can load multiple mods at once, however enabling a mod on a savefile is a on
 When creating mods, you should use separate saves for testing (or a copy of your normal one) in case things go wrong.
 
 ## Setup
-The easiest way to create a mod is through the campaign editor option in the main menu:
+The easiest way to create a mod is through the campaign editor option in the mods menu (accessed from the main menu):
 
 ![Campaign editor button](img/setup/campaign_editor_button.png)
 
@@ -37,6 +37,7 @@ Unless otherwise specified, properties in the `.json` files default to `0`/`fals
 A mod contains the following folders and files:
 
 - `meta.json`: contains mod metadata, like the mod's name, your author name, and version (used for parsing old mods in case of format changes in future game updates)
+- `icon.png`: the icon for the mod; will be shown on the workshop website as the banner for the mod. Must be under 1MB.
 - `Abilities`: contains files defining ship abilities.
 - `Campaigns`: contains campaign files; these are binary, they can only be edited in-game. Can also contain an Ascension tree for each campaign.
 - `Food`: contains food items.

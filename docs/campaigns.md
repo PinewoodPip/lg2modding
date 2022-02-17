@@ -40,7 +40,7 @@ You can define a custom default boost for your campaign to modify the player's s
 
 This file should otherwise follow the [boost](boosts.md) format.
 
-This boost *does not* use values from the vanilla one for unspecified fields, meaning that there are some important fields that you should not forget to define, such as `buildingUnlocks` and `baseStrastChance` - else the player will not be able to build anything nor find any Strange Asteroids! TODO document the vanilla default boost.
+This boost *does not* use values from the vanilla one for unspecified fields, meaning that there are some important fields that you should not forget to define, such as `buildingUnlocks` and `baseStrastChance` - else the player will not be able to build anything nor find any Strange Asteroids!
 
 Example: makes the player start with +100% Metal production, the same 3 unlocked buildings as in vanilla, 1% base Strange Asteroid chance, as well as all cooking tiers and keyboard mining unlocked.
 
@@ -58,5 +58,23 @@ Example: makes the player start with +100% Metal production, the same 3 unlocked
 	"cookingTier2": true,
 	"cookingTier3": true,
 	"keyboardClicking": true
+}
+```
+
+This is the default boost from the vanilla campaign:
+```json
+{
+	"buildingUnlocks": ["metal_mine", "solar_panel", "research_lab"],
+	"strastEffects": ["metal_instant", "candy_effect_boost", "fuel_production", "asteroid_boost"],
+	"synergyScalingExclusions": [17, 9, 22],
+	"essentialBuildings": ["metal_mine", "academy", "pumpjack", "research_lab", "scanner", "solar_panel"],
+	"baseStrastChance": 0.01,
+	"strangeAsteroidChanceCooldown": 390,
+	"guild1Perk": 0.01,
+	"guild2Perk": 0.005,
+	"guild3Perk": 1.25,
+	"idlingMinutesThreshold": 7,
+	"energyFormulaLeniency": 0.15,
+	"healthpackConstant": 2.5
 }
 ```

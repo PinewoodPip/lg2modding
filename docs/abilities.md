@@ -12,9 +12,10 @@ These properties can be set on any ability.
 - `abilityNameTranslationKey`: string, the [text key](custom-text.md) for the ability's name. Shown when you hover over a ship in the fleet menu that has this ability as an active.
 - `abilityDescriptionTranslationKey` string, the [text key](custom-text.md) for the ability's description. Shown when you hover over a ship in the fleet menu that has this ability as an active. Supports parameters, see the [text docs](custom-text.md#ability-parameters).
 - `target`: number, determines who this ability is *aimed* at.
+    - `-1`: None; the projectile will be fired straight towards where the ship is pointing.
     - `0`: Enemies of the caster (the ability's user)
     - `1`: Allies of the caster
-    - `2`: The caster only
+    - `2`: Same as -1, but allows the projectile to hit the ship that created it, as well as allies (useful for healing abilities)
 - `charges`: number, the maximum amount of charges the ability can store. An ability can be used so long as it has charges remaining. Defaults to `1`.
 - `cooldown`: number, the time between the ability's charges being restored. Defaults to `0.2`.
 - `firingDelay`: number, a minimum delay between charges of the ability being usable.
@@ -39,9 +40,9 @@ These properties can be set on any ability.
 
 Where `id` is the ID of the status effect, and `duration` is the duration in seconds. Available status effects are:
 
-- `0`: "Guardian Angel"; multiplies damage taken by `shieldStatusRedirectedDamage` (defined in [GlobalTuning](global-tuning.md)), and redirects that portion to the ship that applied the status as unresistable damage. Used by the Tortoise.
+- `0`: "Guardian Angel"; multiplies damage taken by `0.6`, and redirects that portion to the ship that applied the status as unresistable damage. Used by the Tortoise.
 - `1`: Disarm; prevents the ship from using any abilities.
-- `2`: Shielded; multiplies damage taken by `shieldedStatusMultiplier`, defined in [GlobalTuning](global-tuning.md).
+- `2`: Shielded; multiplies damage taken by `0.25`.
 - `3`: Reflect; causes most projectiles that were to hit the ship to be reflected back to their caster. Reflected projectiles are always homing.
 
 ## Archetypes
@@ -66,6 +67,14 @@ Projectile abilities create projectiles that move across the screen, and land hi
 - `projectileSpriteOverride`: string, the [sprite](sprites.md) filename for the projectile.
 
 *Abilities that are marked as "homing" have a chance to not home into the target and instead deviate by a few degrees. This chance is determined by the speed of the attacker and the target. Slower ships have a lesser chance to fire homing projectiles onto faster ships.
+
+### shotgun
+Shotgun abilities fire multiple projectiles at once. They inherit properties from the `projectile` archetype.
+
+Specific properties:
+
+- `bulletAmount`: number, amount of projectiles to fire.
+- `spreadAngle`: number, the random deviation, in degrees, for each projectile fired. Ex. `180` means the projectiles can deviate 90 degrees in either direction from where the ability is aimed.
 
 ### summon
 Summon-type abilities summon a ship when used. Summons are temporary ships that do not return to your fleet after finishing an expedition. Used by the Queen ship.
@@ -117,3 +126,11 @@ Properties:
 - `maxClicksPerSecond`: number, the maximum clicks per second that the `clickingAbility` admits. Set to negative to disable this limit.
 
 **You do not need to prefix the ability IDs with your mod's ID.**
+
+### sentry
+Sentry abilities fire a projectile (the "sentry") that, until it expires, continuously casts another skill from its place, using the stats of the ship that started the ability. It is used by the Salamander's active ability and inherits properties from the `projectile` archetype. It is recommended to use these with `explodeAtCursor` set to `true` and `target` set to `-1`.
+
+Properties:
+
+- `sentryAbility`: string, the ID of the ability to fire from the sentry's position. Should *not* be prefixed with your mod's ID.
+- `onlyFireAfterArrival`: boolean, defaults to true; if false, the sentry will be able to use its ability before "settling in"

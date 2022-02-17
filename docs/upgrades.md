@@ -45,13 +45,13 @@ The resource cost of the upgrade is defined through the `costsInspector` propert
 - `3`: Energy (not deducted; if used, the upgrade will be unpurchasable unless you have excess energy equal or greater than the 'cost')
 - `4`: Fuel
 
-`value` is a list of the numeric costs corresponding to each resource. As such, both lists should be of the same length.
+`value` is a list of the numeric costs corresponding to each resource. As such, both lists should be of the same length. In the example, the upgrade costs 15k Fuel and 2k Experience.
 
 Other properties:
 - `name`: string, the [text key](custom-text.md) to use for the name of the upgrade. The description and flavour text use this same key suffixed with `.desc` and `.flavour` respectively. Note that by default, the description of an upgrade is automatically generated from its boost. If you provide your own description, it will be used instead. You can use this to reword boosts with ugly/verbose descriptions.
 - `displayIndex`: number, higher amounts cause the upgrade to be displayed further on the end of each tier in the upgrades menu.
 - `tier`: number, the upgrade's tier, as shown in the upgrades menu. Upgrades with a negative tier are hidden from the upgrades menu, but still obtainable through other means (such as conquest).
-- `important`: boolean, if true, the upgrade will flash red in the upgrades menu, and always have a `<!>` over it, and will show that same badge over the upgrades menu button on the sidebar until it is bought.
+- `important`: boolean, if true, the upgrade will flash red in the upgrades menu, and always have a `<!>` over it, and will show that same badge over the upgrades menu button on the sidebar until it is bought. It will also go into a special tier in the upgrades menu.
 - `guildRestriction`: number, restricts this upgrade to players of a specific guild. Values:
     - `-1`: default, no guild restriction.
     - `0`: Scavenger guild

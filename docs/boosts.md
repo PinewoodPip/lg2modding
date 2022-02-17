@@ -30,13 +30,13 @@ Note that "all production", unless otherwise specified, does not affect energy n
 - `offlineProductionMultiplier`: adds a multiplier to offline production. Offline production is capped at 100%. Negative offline production does nothing.
 - `baseAsteroidValue`: adds extra base metal to asteroid production.
 - `keyboardStrastMultiplier`: adds a multiplier to the chance of Strange Asteroids appearing while mining with the keyboard.
-- `activeProductionMultiplier`: adds a multiplier to all production while you're not idling. You're considered idle if you haven't made any input outside of moving the mouse in the last `idlingMinutesThreshold` minutes, as defined in [GlobalTuning](global-tuning.md).
+- `activeProductionMultiplier`: adds a multiplier to all production while you're not idling. You're considered idle if you haven't made any input outside of moving the mouse in the last few minutes, modifiable with the `idlingMinutesThreshold` boost.
 - `xpScannerScaling`: adds a multiplier to XP production for each level of the Scanner building that you have.
 - `buildingCostsRefund`: refunds a percentage of the metal spent on a building (including its level upgrades) when you demolish it. Capped at 100% of the metal spent.
 - `strastChanceMultiplier`: adds a multiplier to the chance of Strange Asteroids appearing.
-- `baseStrastChance`: adds to the base chance of a Strange Asteroid appearing. The base chance is 1% (0.01), as defined in [GlobalTuning](global-tuning.md).
+- `baseStrastChance`: adds to the base chance of a Strange Asteroid appearing. The base chance is 1% (0.01) in the vanilla campaign (set in the [default boost](campaigns.md#default-boost)).
 - `productionMultiplierPerUniqueBuilding`: adds a multiplier to all production for each unique building type currently owned.
-- `allProductionPerStrast`: adds a multiplier to all production for each Strange Asteroid destroyed (total), up to a cap defined in [GlobalTuning](global-tuning.md).
+- `allProductionPerStrast`: adds a multiplier to all production for each Strange Asteroid destroyed (total), up to a cap defined of +100%.
 - `lunchboxDoublingChance`: adds a chance to gain 2x lunchboxes from a conquest.
 - `allProductionPerNode`: adds a multiplier to all production for each galaxy map node conquered in the current ascension.
 - `strastCooldownFlatReduction`: reduces the "cooldown" of Strange Asteroids by a flat amount of seconds. For each Strange Asteroid clicked, the chance of finding additional ones is reduced for a certain amount of seconds, with the penalty scaling down linearly as the cooldown approaches 0.
@@ -51,9 +51,18 @@ Note that "all production", unless otherwise specified, does not affect energy n
 - `lunchboxT1Chance`: adds a chance for Basic-tier 1 recipe foods to appear in lunchboxes.
 - `lunchboxT2Chance`: adds a chance for Advanced-tier recipe foods to appear in lunchboxes.
 - `lunchboxT3Chance`: adds a chance for Gourmet-tier recipe foods to appear in lunchboxes.
-- `spawnBudget`: adds to the "point budget" of spawning enemies in fights. A higher budget means more enemies per fight. Stronger enemies cost more points to spawn. This also works on pre-defined encounters, by placing random enemies from the faction of the last ship to have been spawned from the encounter. Capped in [GlobalTuning](global-tuning.md).
+- `spawnBudget`: adds to the "point budget" of spawning enemies in fights. A higher budget means more enemies per fight. Stronger enemies cost more points to spawn. This also works on pre-defined encounters, by placing random enemies from the faction of the last ship to have been spawned from the encounter. Capped at +14.
 - `strastEffectDurationMultiplier`: adds a multiplier to the duration of Strange Asteroid effects.
 - `resourceConversion`: increases the exchange rate for converting fuel to experience at the Administrative Chamber - a feature unlocked if the player's total boost has this boost above 0. `0.5` equals +50% exchange rate.
+- `defaultEnergyRequirement`: the base amount of energy required for optimal production. Ex. setting this to `10` will require the player to have 10 more energy for buildings to stay at 100% efficiency.
+- `defaultEnergy`: the base amount of energy the player gets, which is unaffected by other multipliers. In the vanilla campaign, this is set to `1` in the [default boost](campaigns.md#default-boost).
+- `strangeAsteroidChanceCooldown`: the pseudo-cooldown between strange asteroids appearing. After activating a strange asteroids, the chance to find the next one scales linearly from 0 to your regular chance as this cooldown ticks down. This penalty is stackable.
+- `guild1Perk`: affects the strength of the Scavenger guild's perk.
+- `guild2Perk`: affects the strength of the Scientist guild's perk.
+- `guild3Perk`: affects the strength of the Trader guild's perk.
+- `idlingMinutesThreshold`: affects the time (in minutes) inactivity requirement for the game to consider the player to be idling.
+- `energyFormulaLeniency`: affects the formula for production efficiency from energy. Higher numbers cause it to switch to a harsher curve later.
+- `healthpackConstant`: the multiplier for healing received from healing packs.
 
 #### Ship/combat boosts
 
@@ -62,9 +71,9 @@ Note that "all production", unless otherwise specified, does not affect energy n
 - `shipHealingMultiplier`: multiplier for all healing received by player ships **from abilities**. Does not affect health packs.
 - `shipHealthMultiplier`: multiplier for the maximum health of all player ships.
 - `shipFullHpDamageMultiplier`: increases damage dealt by player ships at 100% HP.
-- `shipDodgeChance`: adds a chance for incoming damage to be negated. Capped by `dodgeChanceCap` in [GlobalTuning](global-tuning.md).
+- `shipDodgeChance`: adds a chance for incoming damage to be negated.
 - `shipScenarioHealing`: heals a % of each ship's health upon winning a fight.
-- `lowHpDR`: adds incomgin damage reduction to ships below a certain % health threshold (defined by `lowHpThreshold` in [GlobalTuning](global-tuning.md)).
+- `lowHpDR`: adds incomgin damage reduction to ships below 25% health.
 - `shipDamageBoostOnAllyDeath`: adds a multiplier to player ship damage when an allied, non-summon ship dies, until the end of the expedition.
 - `shipHealthMultiplierPerUniqueShip`: adds a multiplier to ship maximum health based on the amount of unique ship types in the fleet upon starting an expedition, until the end of it.
 - `shipRegularResistance`: adds a % of "regular-type" incoming damage that is resisted.
@@ -224,7 +233,7 @@ Gives the Wasp 100% more health (additive, as is the case with all boosts unless
 
 Properties:
 
-- `shipId`: string, the ID of the ship this effect applies to. See [ship types](enums.md#ships).
+- `shipId`: string, the ID of the ship this effect applies to. See [ship types](enums.md#ships). Needs to be prefixed with your mod ID and an underscore to reference your custom ships.
 - `affectAllShips`: boolean, if true, this set of boosts will apply to all ships.
 - `healthMultiplier`: number, adds to the multiplier of the ship's maximum health.
 - `damageMultiplier`: number, adds to the multiplier of the ship's damage.
@@ -232,18 +241,32 @@ Properties:
 - `abilityExplosionRadiusBoost`: number, increases the radius of AoE attacks.
 - `abilityShotgunAngle`: number, increases the firing angle of Shotgun-type abilities.
 - `accurate`: boolean, if true, the ship will never fail accuracy checks*.
-- `healingDoT`: number, heals the ship by a percentage of its health every `healingDoTTickRate` seconds, as defined in [GlobalTuning](global-tuning.md)).
+- `healingDoT`: number, heals the ship by a percentage of its health every 5 seconds.
 - `critChance`: number, adds a chance to deal critical hits with attacks. Critical hits get a multiplier applied to them, 3x by default.
 - `fleetUniqueHealthMultiplier`: number, adds to the ship's health multiplier for each unique ship type in the fleet at the start of an expedition.
 - `fleetUniqueDamageMultiplier`: number, adds to the ship's damage multiplier for each unique ship type in the fleet at the start of an expedition.
 - `dodgeAtFullHealth`: number, adds dodge chance when the ship is at full health. Dodging an attack completely negates its damage and any other effects of the hit.
 - `cooldownPercentageReduction`: number, reduces the cooldown of **active** abilities by a percentage.
-- `volatileDamageForQuickFight`: number, adds to the ship's damage multiplier if the previous fight was completed in less than `shortFightDuration` seconds, as defined in [GlobalTuning](global-tuning.md)). Does not stack, and is removed after a battle that did not meet the criteria.
-- `comebackChance`: number, adds a chance for the ship to be healed for a percentage of its health instead of dying, once per expedition. The healing is defined in [GlobalTuning](global-tuning.md)) as `comebackFractionHealing`.
+- `volatileDamageForQuickFight`: number, adds to the ship's damage multiplier if the previous fight was completed in less than 10 seconds. Does not stack, and is removed after a battle that did not meet the criteria.
+- `comebackChance`: number, adds a chance for the ship to be healed to full health instead of dying, once per expedition.
 - `healingOnAbility`: number, heals ships that use their active ability for a fraction of their maximum health.
 - `damageMultiplierPerEnemy`: number, adds to the ship's damage multiplier for each enemy present at the start of a fight.
 
 *Abilities that are marked as "homing" have a chance to not home into the target and instead deviate by a few degrees. This chance is determined by the speed of the attacker and the target. Slower ships have a lesser chance to fire homing projectiles onto faster ships.
+
+### shipMultiplicativeHealthBoosts and shipMultiplicativeDamageBoosts
+Multiplies a ship's maximum health and damage respectively.
+
+Example: doubles health of all player ships, and halves the damage of wasps.
+```json
+	"shipMultiplicativeHealthBoosts": [{"shipId": "", "multiplicativeBoost": 2}],
+	"shipMultiplicativeDamageBoosts": [{"shipId": "wasp", "multiplicativeBoost": 0.5}],
+```
+
+Properties:
+
+- `shipId`: string, the ID of the ship to affect. Needs to be prefixed with your mod ID and an underscore to reference your custom ships. If empty, will affect all ships.
+- `multiplicativeBoost`: number, the multiplier.
 
 #### buildingUnlocks
 A list of buildings that the boost unlocks for construction. See [building types](enums.md#buildings).
@@ -253,6 +276,16 @@ Example:
 Unlocks the Metal Mine and Academy buildings.
 ```json
     "buildingUnlocks": ["metal_mine", "academy"],
+```
+
+#### shipUnlocks
+A list of ships that the boost unlocks for the player. See [ship types](enums.md#ships). Remember that your own ships must be prefixed with your mod ID and an underscore!
+
+Example:
+
+Unlocks the Tortoise and a custom ship.
+```json
+    "shipUnlocks": ["porcupine", "pip_example_mod_whale"],
 ```
 
 #### strastEffects

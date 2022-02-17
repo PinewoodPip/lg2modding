@@ -6,7 +6,7 @@ Testing your creations is essential to the process of modding. This page gives y
 The `modding.log` file in your save directory logs errors related to modding - these are mostly related to malformatted data in the json files. If the game or your mod doesn't work properly, you should check this file for troubleshooting. It pinpoints the problematic files.
 
 ## Cheat console
-By creating a file named `ilovepip.txt` in your save directory, you'll be able to access the console ingame by pressing the `\`` (tilde) key, from which you can enter numerous commands to speed up testing content.
+By creating a file named `ilovepip.txt` in your save directory, you'll be able to access the console ingame by pressing the ` (tilde) key, from which you can enter numerous commands to speed up testing content.
 
 The following commands exist. `{}` denote required parameters, `[]` denote optional ones.
 
@@ -54,4 +54,4 @@ The holy grail cheat:
 - Unlocks the Galaxy map, combat abilities and Ascension
 - Calls the `maxenergy`, `unlockbuildings` and `unlockships` commands
 - Unlocks all lore logs
-- Changes the default boost to the testing one (TODO elaborate)
+- Changes the (default boost)[campaigns.md#default-boost] to the testing one (TODO elaborate)
