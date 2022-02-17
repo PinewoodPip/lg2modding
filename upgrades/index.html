@@ -175,12 +175,12 @@
 - <code>2</code>: Candy (not functional? TODO investigate)
 - <code>3</code>: Energy (not deducted; if used, the upgrade will be unpurchasable unless you have excess energy equal or greater than the 'cost')
 - <code>4</code>: Fuel</p>
-<p><code>value</code> is a list of the numeric costs corresponding to each resource. As such, both lists should be of the same length.</p>
+<p><code>value</code> is a list of the numeric costs corresponding to each resource. As such, both lists should be of the same length. In the example, the upgrade costs 15k Fuel and 2k Experience.</p>
 <p>Other properties:
 - <code>name</code>: string, the <a href="../custom-text/">text key</a> to use for the name of the upgrade. The description and flavour text use this same key suffixed with <code>.desc</code> and <code>.flavour</code> respectively. Note that by default, the description of an upgrade is automatically generated from its boost. If you provide your own description, it will be used instead. You can use this to reword boosts with ugly/verbose descriptions.
 - <code>displayIndex</code>: number, higher amounts cause the upgrade to be displayed further on the end of each tier in the upgrades menu.
 - <code>tier</code>: number, the upgrade's tier, as shown in the upgrades menu. Upgrades with a negative tier are hidden from the upgrades menu, but still obtainable through other means (such as conquest).
-- <code>important</code>: boolean, if true, the upgrade will flash red in the upgrades menu, and always have a <code>&lt;!&gt;</code> over it, and will show that same badge over the upgrades menu button on the sidebar until it is bought.
+- <code>important</code>: boolean, if true, the upgrade will flash red in the upgrades menu, and always have a <code>&lt;!&gt;</code> over it, and will show that same badge over the upgrades menu button on the sidebar until it is bought. It will also go into a special tier in the upgrades menu.
 - <code>guildRestriction</code>: number, restricts this upgrade to players of a specific guild. Values:
     - <code>-1</code>: default, no guild restriction.
     - <code>0</code>: Scavenger guild

@@ -75,6 +75,8 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#projectile">projectile</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#shotgun">shotgun</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#summon">summon</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#bulletdetonation">bulletDetonation</a>
@@ -86,6 +88,8 @@
     <li class="toctree-l3"><a class="reference internal" href="#healing">healing</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#flurry">flurry</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sentry">sentry</a>
     </li>
         </ul>
     </li>
@@ -164,9 +168,10 @@
 <li><code>abilityNameTranslationKey</code>: string, the <a href="../custom-text/">text key</a> for the ability's name. Shown when you hover over a ship in the fleet menu that has this ability as an active.</li>
 <li><code>abilityDescriptionTranslationKey</code> string, the <a href="../custom-text/">text key</a> for the ability's description. Shown when you hover over a ship in the fleet menu that has this ability as an active. Supports parameters, see the <a href="../custom-text/#ability-parameters">text docs</a>.</li>
 <li><code>target</code>: number, determines who this ability is <em>aimed</em> at.<ul>
+<li><code>-1</code>: None; the projectile will be fired straight towards where the ship is pointing.</li>
 <li><code>0</code>: Enemies of the caster (the ability's user)</li>
 <li><code>1</code>: Allies of the caster</li>
-<li><code>2</code>: The caster only</li>
+<li><code>2</code>: Same as -1, but allows the projectile to hit the ship that created it, as well as allies (useful for healing abilities)</li>
 </ul>
 </li>
 <li><code>charges</code>: number, the maximum amount of charges the ability can store. An ability can be used so long as it has charges remaining. Defaults to <code>1</code>.</li>
@@ -192,9 +197,9 @@
 </code></pre>
 <p>Where <code>id</code> is the ID of the status effect, and <code>duration</code> is the duration in seconds. Available status effects are:</p>
 <ul>
-<li><code>0</code>: "Guardian Angel"; multiplies damage taken by <code>shieldStatusRedirectedDamage</code> (defined in <a href="global-tuning.md">GlobalTuning</a>), and redirects that portion to the ship that applied the status as unresistable damage. Used by the Tortoise.</li>
+<li><code>0</code>: "Guardian Angel"; multiplies damage taken by <code>0.6</code>, and redirects that portion to the ship that applied the status as unresistable damage. Used by the Tortoise.</li>
 <li><code>1</code>: Disarm; prevents the ship from using any abilities.</li>
-<li><code>2</code>: Shielded; multiplies damage taken by <code>shieldedStatusMultiplier</code>, defined in <a href="global-tuning.md">GlobalTuning</a>.</li>
+<li><code>2</code>: Shielded; multiplies damage taken by <code>0.25</code>.</li>
 <li><code>3</code>: Reflect; causes most projectiles that were to hit the ship to be reflected back to their caster. Reflected projectiles are always homing.</li>
 </ul>
 <h2 id="archetypes">Archetypes</h2>
@@ -217,6 +222,13 @@
 <li><code>projectileSpriteOverride</code>: string, the <a href="../sprites/">sprite</a> filename for the projectile.</li>
 </ul>
 <p>*Abilities that are marked as "homing" have a chance to not home into the target and instead deviate by a few degrees. This chance is determined by the speed of the attacker and the target. Slower ships have a lesser chance to fire homing projectiles onto faster ships.</p>
+<h3 id="shotgun">shotgun</h3>
+<p>Shotgun abilities fire multiple projectiles at once. They inherit properties from the <code>projectile</code> archetype.</p>
+<p>Specific properties:</p>
+<ul>
+<li><code>bulletAmount</code>: number, amount of projectiles to fire.</li>
+<li><code>spreadAngle</code>: number, the random deviation, in degrees, for each projectile fired. Ex. <code>180</code> means the projectiles can deviate 90 degrees in either direction from where the ability is aimed.</li>
+</ul>
 <h3 id="summon">summon</h3>
 <p>Summon-type abilities summon a ship when used. Summons are temporary ships that do not return to your fleet after finishing an expedition. Used by the Queen ship.</p>
 <p>Specific properites:</p>
@@ -261,6 +273,13 @@
 <li><code>maxClicksPerSecond</code>: number, the maximum clicks per second that the <code>clickingAbility</code> admits. Set to negative to disable this limit.</li>
 </ul>
 <p><strong>You do not need to prefix the ability IDs with your mod's ID.</strong></p>
+<h3 id="sentry">sentry</h3>
+<p>Sentry abilities fire a projectile (the "sentry") that, until it expires, continuously casts another skill from its place, using the stats of the ship that started the ability. It is used by the Salamander's active ability and inherits properties from the <code>projectile</code> archetype. It is recommended to use these with <code>explodeAtCursor</code> set to <code>true</code> and <code>target</code> set to <code>-1</code>.</p>
+<p>Properties:</p>
+<ul>
+<li><code>sentryAbility</code>: string, the ID of the ability to fire from the sentry's position. Should <em>not</em> be prefixed with your mod's ID.</li>
+<li><code>onlyFireAfterArrival</code>: boolean, defaults to true; if false, the sentry will be able to use its ability before "settling in"</li>
+</ul>
               
             </div>
           </div>

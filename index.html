@@ -148,7 +148,7 @@
 <p>You can load multiple mods at once, however enabling a mod on a savefile is a one-way trip; once enabled, the savefile will not load without the mod being installed. You will be notified of this when you try to load a savefile with new mods enabled, and a backup of the save will be created in case you need to revert.</p>
 <p>When creating mods, you should use separate saves for testing (or a copy of your normal one) in case things go wrong.</p>
 <h2 id="setup">Setup</h2>
-<p>The easiest way to create a mod is through the campaign editor option in the main menu:</p>
+<p>The easiest way to create a mod is through the campaign editor option in the mods menu (accessed from the main menu):</p>
 <p><img alt="Campaign editor button" src="img/setup/campaign_editor_button.png" /></p>
 <p>Even if you don't intend to create a custom campaign, the menu is useful as it will create a mod project folder with all the metadata already written, so you do not need to set it all up manually.</p>
 <p>Make sure to make the ID field as unique as possible (including your name as a prefix/suffix helps a lot) to avoid conflicts with other mods as this will be used to identify your mod's stuff in savefiles. <strong>As such, it should not be changed, ever.</strong></p>
@@ -164,6 +164,7 @@
 <p>A mod contains the following folders and files:</p>
 <ul>
 <li><code>meta.json</code>: contains mod metadata, like the mod's name, your author name, and version (used for parsing old mods in case of format changes in future game updates)</li>
+<li><code>icon.png</code>: the icon for the mod; will be shown on the workshop website as the banner for the mod. Must be under 1MB.</li>
 <li><code>Abilities</code>: contains files defining ship abilities.</li>
 <li><code>Campaigns</code>: contains campaign files; these are binary, they can only be edited in-game. Can also contain an Ascension tree for each campaign.</li>
 <li><code>Food</code>: contains food items.</li>
@@ -230,5 +231,5 @@
 
 <!--
 MkDocs version : 1.2.3
-Build Date UTC : 2022-02-02 11:10:51.930680+00:00
+Build Date UTC : 2022-02-17 19:39:32.630693+00:00
 -->

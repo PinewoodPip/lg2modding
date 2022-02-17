@@ -162,7 +162,7 @@
 <p>When the game calculates the player's total <a href="../boosts/">boosts</a>, it does so starting with a "default boost" to which all others are summed up.</p>
 <p>You can define a custom default boost for your campaign to modify the player's starting stats and unlocked features by creating a Json file with the same filename as the campaign, but <code>.defaultboost</code> as the extension.</p>
 <p>This file should otherwise follow the <a href="../boosts/">boost</a> format.</p>
-<p>This boost <em>does not</em> use values from the vanilla one for unspecified fields, meaning that there are some important fields that you should not forget to define, such as <code>buildingUnlocks</code> and <code>baseStrastChance</code> - else the player will not be able to build anything nor find any Strange Asteroids! TODO document the vanilla default boost.</p>
+<p>This boost <em>does not</em> use values from the vanilla one for unspecified fields, meaning that there are some important fields that you should not forget to define, such as <code>buildingUnlocks</code> and <code>baseStrastChance</code> - else the player will not be able to build anything nor find any Strange Asteroids!</p>
 <p>Example: makes the player start with +100% Metal production, the same 3 unlocked buildings as in vanilla, 1% base Strange Asteroid chance, as well as all cooking tiers and keyboard mining unlocked.</p>
 <pre><code class="language-json">{
     &quot;resourceProductionBoosts&quot;: [
@@ -177,6 +177,22 @@
     &quot;cookingTier2&quot;: true,
     &quot;cookingTier3&quot;: true,
     &quot;keyboardClicking&quot;: true
+}
+</code></pre>
+<p>This is the default boost from the vanilla campaign:</p>
+<pre><code class="language-json">{
+    &quot;buildingUnlocks&quot;: [&quot;metal_mine&quot;, &quot;solar_panel&quot;, &quot;research_lab&quot;],
+    &quot;strastEffects&quot;: [&quot;metal_instant&quot;, &quot;candy_effect_boost&quot;, &quot;fuel_production&quot;, &quot;asteroid_boost&quot;],
+    &quot;synergyScalingExclusions&quot;: [17, 9, 22],
+    &quot;essentialBuildings&quot;: [&quot;metal_mine&quot;, &quot;academy&quot;, &quot;pumpjack&quot;, &quot;research_lab&quot;, &quot;scanner&quot;, &quot;solar_panel&quot;],
+    &quot;baseStrastChance&quot;: 0.01,
+    &quot;strangeAsteroidChanceCooldown&quot;: 390,
+    &quot;guild1Perk&quot;: 0.01,
+    &quot;guild2Perk&quot;: 0.005,
+    &quot;guild3Perk&quot;: 1.25,
+    &quot;idlingMinutesThreshold&quot;: 7,
+    &quot;energyFormulaLeniency&quot;: 0.15,
+    &quot;healthpackConstant&quot;: 2.5
 }
 </code></pre>
               
