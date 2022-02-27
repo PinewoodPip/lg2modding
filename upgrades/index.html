@@ -140,7 +140,7 @@
                 <h1 id="upgrades">Upgrades</h1>
 <p>Upgrades are defined in the <code>Upgrades</code> folder. An upgrade only defines the name, price, tiering and other metadata; the actual effects that it grants to the player are defined through a <a href="../boosts/">boost</a>.</p>
 <h2 id="example">Example</h2>
-<p>This example is a tier 2 upgrade that costs 2k Experience and 15k Fuel.</p>
+<p>This example is a tier 2 upgrade that costs 5k metal and 200 Experience.</p>
 <pre><code class="language-json">{
     &quot;referenceName&quot;:&quot;Panel upgrade 2&quot;,
     &quot;mutualExclusivityGroup&quot;: &quot;&quot;,
@@ -151,31 +151,26 @@
     &quot;important&quot;: true,
     &quot;sprite&quot;: &quot;test_sprite.png&quot;,
     &quot;tier&quot;: 2,
-    &quot;costsInspector&quot;: [
-        {
-            &quot;resource&quot;: [4, 1],
-            &quot;value&quot;: [15000.0, 2000.0]
-        }
-    ],
+    &quot;costs&quot;: {
+        &quot;metal&quot;: 5000,
+        &quot;experience&quot;: 200,
+    },
 }
 </code></pre>
 <h2 id="properties">Properties</h2>
 <p>Like with all modded content, the <code>stringId</code> field is mandatory. Additionally, for them to do anything for the player, you must include a <code>boostId</code> property, with the ID of the <a href="../boosts/">boost</a> to grant.</p>
-<p>The resource cost of the upgrade is defined through the <code>costsInspector</code> property, with a special structure:</p>
-<pre><code class="language-json">&quot;costsInspector&quot;: [
-        {
-            &quot;resource&quot;: [4, 1],
-            &quot;value&quot;: [15000.0, 2000.0]
-        }
-    ],
+<p>The resource cost of the upgrade is defined through the <code>costs</code> property, with a special structure:</p>
+<pre><code class="language-json">&quot;costs&quot;: {
+        &quot;metal&quot;: 5000,
+        &quot;experience&quot;: 200
+    },
 </code></pre>
-<p><code>resource</code> is a list of the types of resources the upgrade will cost:
-- <code>0</code>: Metal
-- <code>1</code>: Experience
-- <code>2</code>: Candy (not functional? TODO investigate)
-- <code>3</code>: Energy (not deducted; if used, the upgrade will be unpurchasable unless you have excess energy equal or greater than the 'cost')
-- <code>4</code>: Fuel</p>
-<p><code>value</code> is a list of the numeric costs corresponding to each resource. As such, both lists should be of the same length. In the example, the upgrade costs 15k Fuel and 2k Experience.</p>
+<p>The following are the IDs of the resources to use for <code>costs</code>:
+- <code>"metal"</code>
+- <code>"experience"</code>
+- <code>"candy"</code> (only works for Ascension upgrades)
+- <code>"energy"</code> (not deducted; if used, the upgrade will be unpurchasable unless you have excess energy equal or greater than the 'cost')
+- <code>"fuel"</code></p>
 <p>Other properties:
 - <code>name</code>: string, the <a href="../custom-text/">text key</a> to use for the name of the upgrade. The description and flavour text use this same key suffixed with <code>.desc</code> and <code>.flavour</code> respectively. Note that by default, the description of an upgrade is automatically generated from its boost. If you provide your own description, it will be used instead. You can use this to reword boosts with ugly/verbose descriptions.
 - <code>displayIndex</code>: number, higher amounts cause the upgrade to be displayed further on the end of each tier in the upgrades menu.
@@ -188,11 +183,6 @@
     - <code>2</code>: Trader guild
 - <code>mutualExclusivityGroup</code>: string. Upgrades with the same <code>mutualExclusivityGroup</code> cannot be bought together. Once one is bought, the others become hidden from the upgrades menu (but may still be obtained through other means).
 - <code>sprite</code>: string, the <a href="../sprites/">sprite</a> filename.</p>
-<p>Deprecated / not fully-functional properties:</p>
-<ul>
-<li><code>isAscensionUpgrade</code>: boolean. Ascension upgrades are not lost upon Ascending, do not appear in the upgrades menu and and are counted towards Ascension-related achievements and discount boosts. <strong>Note that at the moment, you cannot modify the actual Ascension tree, meaning this property is not fully usable.</strong></li>
-<li><code>maxLevel</code>: number. Deprecated value for creating upgrades that can be bought multiple times to level them up. This requires also filling up the <code>costsInspector</code> field with the right amount of costs. <strong>Multi-level upgrades were abandoned early in the game's development, and as such, likely do not work/display properly anymore and thus this property should not be used.</strong></li>
-</ul>
               
             </div>
           </div>
