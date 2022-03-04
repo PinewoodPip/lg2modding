@@ -46,6 +46,10 @@ Removes the current cooldown for deploying a new fleet.
 
 Next asteroid to spawn will be strange. If a strast id is provided, it will be of that type (even if not unlocked).
 
+`peace`
+
+Toggles invincibility for all ships (including enemies) - useful to testing abilities without worrying about finding a fight that doesn't end in 2 seconds.
+
 `pipmode`
 
 The holy grail cheat:

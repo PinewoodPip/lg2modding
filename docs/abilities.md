@@ -85,6 +85,13 @@ Specific properites:
 - `summonRadius`: number, the radius (centered on caster) within which the ship is summoned.
 - `maxSummons`: number, the ability will do nothing if the caster already has this amount of summons, or more, regardless of what ability they came from.
 
+### spiral
+Spiral-type abilities fire bullets around the caster, with each shot being offset by a few degrees from the last one. Used by some enemies (like angels) in the base game. **Inherits properties from the `projectile` archetype, but cannot home into enemies.**
+
+Specific properties:
+
+- `shotsPerLoop`: number, the amount of bullets fired per 'cycle'. Ex. if this is `4`, each bullet would be fired 90 degrees away from the last one.
+
 ### bulletDetonation
 BulletDetonation-type abilities remove all of the ship's current bullets on the field, then cast an ability from their place. Used by the Porcupine ship for its shrapnel ability.
 
@@ -128,7 +135,7 @@ Properties:
 **You do not need to prefix the ability IDs with your mod's ID.**
 
 ### sentry
-Sentry abilities fire a projectile (the "sentry") that, until it expires, continuously casts another skill from its place, using the stats of the ship that started the ability. It is used by the Salamander's active ability and inherits properties from the `projectile` archetype. It is recommended to use these with `explodeAtCursor` set to `true` and `target` set to `-1`.
+Sentry abilities fire a projectile (the "sentry") that, until it expires, continuously casts another skill from its place, using the stats of the ship that started the ability. It is used by the Salamander's active ability and inherits properties from the `projectile` archetype. It is recommended to use these with `manuallyAimed`, `explodeAtCursor` set to `true` and `target` set to `-1`, so the sentry 'lands' where your cursor points.
 
 Properties:
 
