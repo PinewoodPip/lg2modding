@@ -79,6 +79,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#summon">summon</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#spiral">spiral</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#bulletdetonation">bulletDetonation</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#summonsuicide">summonSuicide</a>
@@ -237,6 +239,12 @@
 <li><code>summonRadius</code>: number, the radius (centered on caster) within which the ship is summoned.</li>
 <li><code>maxSummons</code>: number, the ability will do nothing if the caster already has this amount of summons, or more, regardless of what ability they came from.</li>
 </ul>
+<h3 id="spiral">spiral</h3>
+<p>Spiral-type abilities fire bullets around the caster, with each shot being offset by a few degrees from the last one. Used by some enemies (like angels) in the base game. <strong>Inherits properties from the <code>projectile</code> archetype, but cannot home into enemies.</strong></p>
+<p>Specific properties:</p>
+<ul>
+<li><code>shotsPerLoop</code>: number, the amount of bullets fired per 'cycle'. Ex. if this is <code>4</code>, each bullet would be fired 90 degrees away from the last one.</li>
+</ul>
 <h3 id="bulletdetonation">bulletDetonation</h3>
 <p>BulletDetonation-type abilities remove all of the ship's current bullets on the field, then cast an ability from their place. Used by the Porcupine ship for its shrapnel ability.</p>
 <p>Specific properites:</p>
@@ -274,7 +282,7 @@
 </ul>
 <p><strong>You do not need to prefix the ability IDs with your mod's ID.</strong></p>
 <h3 id="sentry">sentry</h3>
-<p>Sentry abilities fire a projectile (the "sentry") that, until it expires, continuously casts another skill from its place, using the stats of the ship that started the ability. It is used by the Salamander's active ability and inherits properties from the <code>projectile</code> archetype. It is recommended to use these with <code>explodeAtCursor</code> set to <code>true</code> and <code>target</code> set to <code>-1</code>.</p>
+<p>Sentry abilities fire a projectile (the "sentry") that, until it expires, continuously casts another skill from its place, using the stats of the ship that started the ability. It is used by the Salamander's active ability and inherits properties from the <code>projectile</code> archetype. It is recommended to use these with <code>manuallyAimed</code>, <code>explodeAtCursor</code> set to <code>true</code> and <code>target</code> set to <code>-1</code>, so the sentry 'lands' where your cursor points.</p>
 <p>Properties:</p>
 <ul>
 <li><code>sentryAbility</code>: string, the ID of the ability to fire from the sentry's position. Should <em>not</em> be prefixed with your mod's ID.</li>
