@@ -50,4 +50,4 @@ A mod contains the following folders and files:
 
 You needn't to include assets of all types, however some require the use of others. Ships require Abilities, while Food and Upgrades require Boosts.
 
-Head over to one of the sections on the sidebar to get started! It's recommended to take a look at the (TODO: insert link) example mod as reference.
+Head over to one of the sections on the sidebar to get started! It's recommended to take a look at the [example mod](example_mod.zip)  as reference.

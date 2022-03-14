@@ -53,7 +53,7 @@ The `archetype` field of an ability defines its behaviour. The available archety
 Projectile abilities create projectiles that move across the screen, and land hits upon colliding with a valid target. Multiple other archetypes are based on it, inheriting its properties:
 
 - `dmgMultiplier`: number, the multiplier for the ability's damage. Ex. `1.5` will deal 150% of the ship's damage.
-- `damageType`: number, the type of damage the ability deals. See [damage type enumeration](enums.md#damage-type).
+- `damageType`: number, the type of damage the ability deals. See [damage type enumeration](enums.md#damage-types).
 - `homingByDefault`: boolean, if true, the projectile will home into its target, unless it missed*. Defaults to `true`.
 - `travelSpeed`: number, the speed of the projectile. Default is `100`.
 - `unmissable`: boolean, if true, the ability will not miss if it's also set to be homing.

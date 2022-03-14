@@ -73,7 +73,7 @@ Note that "all production", unless otherwise specified, does not affect energy n
 - `shipFullHpDamageMultiplier`: increases damage dealt by player ships at 100% HP.
 - `shipDodgeChance`: adds a chance for incoming damage to be negated.
 - `shipScenarioHealing`: heals a % of each ship's health upon winning a fight.
-- `lowHpDR`: adds incomgin damage reduction to ships below 25% health.
+- `lowHpDR`: adds incoming damage reduction to ships below 25% health.
 - `shipDamageBoostOnAllyDeath`: adds a multiplier to player ship damage when an allied, non-summon ship dies, until the end of the expedition.
 - `shipHealthMultiplierPerUniqueShip`: adds a multiplier to ship maximum health based on the amount of unique ship types in the fleet upon starting an expedition, until the end of it.
 - `shipRegularResistance`: adds a % of "regular-type" incoming damage that is resisted.
